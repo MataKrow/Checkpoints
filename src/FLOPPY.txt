@@ -1,0 +1,135 @@
+#library "FLOPPY" // Name of the library
+#include "zcommon.acs"
+
+//////////////////////////////////////////////////////////////
+//						SAVE DISK START						//
+//////////////////////////////////////////////////////////////
+bool CHECKINIT;
+
+
+//Warps player to checkpoint set and Gives SP_PowerLoad to player
+script "checkpoint_warp" RESPAWN
+{
+if(!PlayerKeyDown(-1, BT_ZOOM))
+	{
+	IF (CHECKINIT == TRUE)
+	{
+	if(GetCvar("sp_protectspawned") == true)
+	{
+	GiveInventory ("SP_PowerLoad", 1);
+	}
+	
+	//Teleport(32035, 0, 1);
+	SetHudSize(320,240,0);
+	until (RoomForWarp() || PlayerKeyDown(-1, BT_ZOOM))
+	{
+	HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
+	HudMessage(s:"\c[Chlorine]            Waiting to warp...\n Hold the Zoom Key to cancel."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+	delay(35);
+	}
+	SetHudSize(0, 0, FALSE);
+	//SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), true);
+	if(!PlayerKeyDown(-1, BT_ZOOM))
+	{
+		if(GetCvar("sp_randomspawnangle") == true)
+	{
+	ChangeActorAngle(0,Random(0.0,1.0));
+	}
+	
+	ThrustThingZ(0, Random(GetCvar("sp_spawnzvelocitymin"),GetCvar("sp_spawnzvelocitymax")), 0, 0);
+	ThrustThing(Random(0,256),GetCvar("sp_spawnxyvelocity"), 1, 0);
+	}
+	}
+	}
+}
+
+//Clears previous checkpoints.
+script "checkpoint_wipe" (void)
+{
+	if (ClassifyActor(32035) != ACTOR_NONE)
+	{
+	thing_remove(32035);
+	}
+	terminate;
+}
+
+//Logs "[PLAYERNAME] just hit a checkpoint!" and revives everyone.
+script "checkpoint_hit" (void)
+{
+	CHECKINIT = TRUE;
+	
+	if(GetCvar("sp_protectactivator") == true)
+	{
+	GiveInventory ("SP_PowerSaved", 1);
+	}
+		
+	if (GameType() != GAME_SINGLE_PLAYER)
+	{
+	HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
+	SetHudSize(320,240,0);
+	HudMessageBold (s:"\c[Chlorine]",n:0,s:" just hit a checkpoint!"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING | HUDMSG_LOG, 880,"Chlorine", 160.0, 62.0, 1.0, 2.0);
+	SetHudSize(0, 0, FALSE);
+	AmbientSound("CHECK", 127);
+	}
+	else
+	{
+	AmbientSound("SAVED", 127);
+	Terminate;
+	}
+}
+
+script "revive_all_execute" (void)
+{
+ACS_NamedExecuteAlways("revive_all", 0,GetCvar("sp_resdelay"));
+}
+
+//Revives all players.
+script "revive_all" (int time)
+{
+	delay(35);
+	int i = 0;
+		 while (i<64)
+		 {
+			SetDeadSpectator(i,false);
+			i++;
+			delay(time);
+		 }
+}
+
+script "iamlegend" (void)
+{
+	int i = 1;
+		 while (i<64)
+		 {
+			SetDeadSpectator(i,TRUE);
+			i++;
+			delay(1);
+		 }
+}
+
+script "sp_getlocation"(void) NET
+{ 
+AmbientSound("SAVED", 127);
+print(s:"X: ",f:GetActorX(0),s:"\nY: ",f:GetActorY(0),s:"\nZ: ",f:GetActorZ(0),s:"\nANGLE: ",i:GetActorAngle(0) >> 8);
+}
+
+function bool PlayerKeyDown(int player, int key)
+{
+	int buttons = GetPlayerInput(player, INPUT_BUTTONS);
+
+	if ((buttons & key) == key) { return true; }
+		return false;
+}
+
+function bool RoomForWarp(void)
+{
+	if (!SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), true))
+		return false;
+	return true;
+}
+//TODO Add a function to move all players to an activators position.
+//	   Add a function to move all players to the active checkpoint.
+
+//////////////////////////////////////////////////////////////
+//						SAVE DISK END						//
+//////////////////////////////////////////////////////////////

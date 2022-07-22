@@ -1,0 +1,60 @@
+/*
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "$SP_TITLE", "SD_Options"
+}
+*/
+
+OptionMenu "Checkpoint"
+{
+	Title "$SP_TITLE"
+	StaticText "$SP_AUTHOR"
+	StaticText ""
+	StaticText ""
+	Submenu "PRESETS", "Checkpoint_Presets"
+	StaticText ""
+	StaticText ""
+	StaticText "$SP_UIHEADER1"
+	StaticText ""
+	Option "Given to activator", "sp_protectactivator", "YESNO"
+	Option "Given to the resurrected", "sp_protectspawned", "YESNO"
+	StaticText ""
+	StaticText ""
+	StaticText "$SP_UIHEADER2"
+	StaticText ""
+	Option "Spawn Angle", "sp_randomspawnangle", "SP_ANGLECHOICE"
+	StaticText ""
+	StaticText "Vertical Spawn Velocity" 
+	StaticText ""
+	Slider "Minimum Velocity", "sp_spawnzvelocitymin", 0, 50, 1,0
+	Slider "Maximum Velocity", "sp_spawnzvelocitymax", 0, 50, 1,0
+	StaticText ""
+	Slider "Horizontal Spawn Velocity", "sp_spawnxyvelocity", 0, 15, 1,0
+	StaticText ""
+	StaticText ""
+	StaticText "$SP_UIHEADERZANDY"
+	StaticText ""
+	Slider "Survival Resurrect frequency", "sp_resdelay", 0, 35, 1,0
+	StaticText "$SP_TELEFRAGWARNING"
+	StaticText ""
+	StaticText ""
+	Command "$SP_RESET","sp_resettodefaults"
+	StaticText ""
+	StaticText ""
+
+}
+
+OptionMenu "Checkpoint_Presets"
+{
+Title "$SP_TITLE2"
+StaticText ""
+StaticText ""
+StaticText "$SP_UIHEADER3"
+StaticText ""
+}
+
+OptionValue "SP_ANGLECHOICE"
+{
+	0, "Set By Thing"
+	1, "Randomized"
+}

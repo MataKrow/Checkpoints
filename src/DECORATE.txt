@@ -1,0 +1,76 @@
+Actor SP_SaveDisk : CustomInventory 20027
+{
+//$Title Save Disk
+//$Category Essential
+//$sprite SAVEA0
+//$Color 9
+//$NotAngled
+Height 56
+Radius 25
+Mass 4
+Inventory.PickupMessage "\c[Chlorine]You have reached a Checkpoint."
+Inventory.PickupFlash "SP_FlashSpawner"
+Inventory.PickupSound ""
++BRIGHT
++CANPASS
++FLOATBOB
++NOTDMATCH
+-COUNTITEM
+-NOGRAVITY
++NEVERRESPAWN
++NOTIMEFREEZE
++FIXMAPTHINGPOS
++DONTGIB
+
+States
+	{
+  	Spawn:
+		SAVE A -1
+		Stop
+  	Pickup:
+		SAVE A 0 ACS_NamedExecuteAlways("checkpoint_hit", 0)
+		//SAVE A 1 A_SpawnItemEx ("SP_FlashSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0,0)
+		SAVE A 0 AutoSave
+    	Stop
+  	}
+
+}
+
+Actor SP_FlashSpawner : Actor
+{
++NOTIMEFREEZE
+States
+  	{
+  	Spawn:
+		TNT1 A 0
+		TNT1 A 1 ACS_NamedTerminate("revive_all", 0)
+		TNT1 A 1 ACS_NamedExecuteAlways("revive_all_execute", 0)
+		TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
+		TNT1 A 1 A_SpawnItemEx ("SP_PlayerSpawner",0,0,0,0,0,0,0,0,0,32035)
+		TNT1 A 1
+		Stop	
+  	}
+}
+
+Actor SP_PlayerSpawner : BlueParticleFountain
+{
++NOTIMEFREEZE
++CANPASS
+-NOBLOCKMAP
+-NOGRAVITY
++NEVERRESPAWN
++BLOCKEDBYSOLIDACTORS
++FIXMAPTHINGPOS
+}
+
+Actor SP_PowerSaved : PowerInvulnerable
+{
+inventory.icon "SAVEDISK"
+Powerup.Duration 53
+}
+
+Actor SP_PowerLoad : SP_PowerSaved
+{
+inventory.icon "STCDROM"
+Powerup.Duration 105
+}
