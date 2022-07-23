@@ -14,5 +14,13 @@
             "cwd": "${workspaceFolder}"
     }
 
+    {
+            "name": "ACS",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}/compileacs.bat",
+            "cwd": "${workspaceFolder}"
+    }
+
     ]
 }
