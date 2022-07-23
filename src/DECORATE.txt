@@ -48,7 +48,7 @@ States
 		TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
 		TNT1 A 1 A_SpawnItemEx ("SP_PlayerSpawner",0,0,0,0,0,0,0,0,0,32035)
 		TNT1 A 1
-		Stop	
+		Stop
   	}
 }
 

@@ -4,7 +4,7 @@ REM sets the location of gzdoom.
 
 
 :choice
-set /P c="0-GZDOOM 1-ZANDRONUM 2-Standalone Test 3-GZDOOM  Multiplayer test : "
+set /P c="0-GZDOOM 1-ZANDRONUM 3-GZDOOM Multiplayer test :"
 echo.
 if /I "%c%" EQU "0" goto :opt0
 if /I "%c%" EQU "1" goto :opt1
@@ -57,7 +57,7 @@ exit
 move .\BUILD.ipk3 D:\Doom\SourcePorts\Zandronum
 cd D:\Doom\SourcePorts\Zandronum
 REM Runs the project
-.gzdoom.exe -noautoload +vid_fullscreen 0 +idmypos 1 +vid_fps 1 +am_cheat 2 +noise 0 +developer 2 +sv_cheats 1 -stdout -file %ProjName%.ipk3 -file RadiusDebug.pk3
+Zandronum -noautoload +vid_fullscreen 0 +idmypos 1 +vid_fps 1 +am_cheat 2 +noise 0 +developer 2 +sv_cheats 1 -stdout -file %ProjName%.ipk3 -file RadiusDebug.pk3
 exit
 del D:\Doom\SourcePorts\Zandronum\%ProjName%.ipk3
 exit

@@ -1,0 +1,4 @@
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "$SP_TITLE", "Checkpoint"
+}

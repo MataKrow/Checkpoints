@@ -1,17 +1,11 @@
-/*
-AddOptionMenu "OptionsMenu"
-{
-	Submenu "$SP_TITLE", "SD_Options"
-}
-*/
-
 OptionMenu "Checkpoint"
 {
 	Title "$SP_TITLE"
 	StaticText "$SP_AUTHOR"
 	StaticText ""
 	StaticText ""
-	Submenu "PRESETS", "Checkpoint_Presets"
+	//TODO Create a seprate menu for all the presets categorized by IWADS,PWADS,USER-DEFINED
+	Option "$SP_TITLE2", "sp_presets", "IWAD"
 	StaticText ""
 	StaticText ""
 	StaticText "$SP_UIHEADER1"
@@ -24,7 +18,7 @@ OptionMenu "Checkpoint"
 	StaticText ""
 	Option "Spawn Angle", "sp_randomspawnangle", "SP_ANGLECHOICE"
 	StaticText ""
-	StaticText "Vertical Spawn Velocity" 
+	StaticText "Vertical Spawn Velocity"
 	StaticText ""
 	Slider "Minimum Velocity", "sp_spawnzvelocitymin", 0, 50, 1,0
 	Slider "Maximum Velocity", "sp_spawnzvelocitymax", 0, 50, 1,0
@@ -44,13 +38,13 @@ OptionMenu "Checkpoint"
 
 }
 
-OptionMenu "Checkpoint_Presets"
+OptionValue "IWAD"
 {
-Title "$SP_TITLE2"
-StaticText ""
-StaticText ""
-StaticText "$SP_UIHEADER3"
-StaticText ""
+	0, "Nothing"
+	1, "The Ultimate Doom"
+	2, "DOOM II"
+	3, "TNT: Evilution"
+	4, "The Plutonia Experiment"
 }
 
 OptionValue "SP_ANGLECHOICE"
