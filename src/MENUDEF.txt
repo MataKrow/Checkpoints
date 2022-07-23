@@ -5,7 +5,7 @@ OptionMenu "Checkpoint"
 	StaticText ""
 	StaticText ""
 	//TODO Create a seprate menu for all the presets categorized by IWADS,PWADS,USER-DEFINED
-	Option "$SP_TITLE2", "sp_presets", "IWAD"
+	Submenu "$SP_TITLE2", "sp_presetoptions"
 	StaticText ""
 	StaticText ""
 	StaticText "$SP_UIHEADER1"
@@ -29,12 +29,41 @@ OptionMenu "Checkpoint"
 	StaticText "$SP_UIHEADERZANDY"
 	StaticText ""
 	Slider "Survival Resurrect frequency", "sp_resdelay", 0, 35, 1,0
-	StaticText "$SP_TELEFRAGWARNING"
+	StaticText ""
 	StaticText ""
 	StaticText ""
 	Command "$SP_RESET","sp_resettodefaults"
 	StaticText ""
 	StaticText ""
+}
+
+OptionMenu "sp_presetoptions"
+{
+	Title "$SP_TITLE2"
+	StaticText ""
+	StaticText ""
+	Command "Nothing", "sp_presets 0"
+	StaticText ""
+	StaticText "$SP_UIHEADER3"
+	Command " The Ultimate Doom [0/32 done]", "sp_presets 1"
+	Command " DOOM II [7/32 done]", "sp_presets 2"
+	Command " TNT: Evilution [0/32 done]", "sp_presets 3"
+	Command " The Plutonia Experiment [0/32 done]", "sp_presets 4"
+	StaticText ""
+	StaticText ""
+	StaticText "$SP_UIHEADER4"
+	Command " Nothing", "sp_presets 0"
+	StaticText ""
+	StaticText ""
+	StaticText "$SP_UIHEADER5"
+	Command " Nothing", "sp_presets 0"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	Command " Nothing", "sp_presets 0"
+
+
+
 
 }
 

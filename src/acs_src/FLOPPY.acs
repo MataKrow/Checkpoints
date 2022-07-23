@@ -1,7 +1,7 @@
 #library "FLOPPY" // Name of the library
 #include "zcommon.acs"
 
-//WARNING: Zandronum will potentially crash if you start to chug Checkpoints with people.
+//WARNING: Zandronum will potentially crash if you host a checkpoint chugging contest.
 
 //////////////////////////////////////////////////////////////
 //						SAVE DISK START						//

@@ -1,6 +1,7 @@
 alias sp_resettodefaults "sp_protectactivator TRUE; sp_protectspawned TRUE; sp_randomspawnangle FALSE; sp_spawnzvelocitymin 28; sp_spawnzvelocitymax 32; sp_spawnxyvelocity 5; sp_resdelay 14"
 alias Checkpoint "openmenu Checkpoint"
 alias Checkpoints "openmenu Checkpoint"
+alias CPOp "openmenu Checkpoint"
 alias CPOptions "openmenu Checkpoint"
 alias CPMenu "openmenu Checkpoint"
 alias CPUI "openmenu Checkpoint"
