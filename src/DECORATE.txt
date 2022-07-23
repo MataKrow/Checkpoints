@@ -28,7 +28,7 @@ States
 		SAVE A -1
 		Stop
   	Pickup:
-		SAVE A 0 ACS_NamedExecuteAlways("checkpoint_hit", 0)
+		SAVE A 0 ACS_NamedExecute("checkpoint_hit", 0)
 		//SAVE A 1 A_SpawnItemEx ("SP_FlashSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0,0)
 		SAVE A 0 AutoSave
     	Stop
@@ -39,12 +39,13 @@ States
 Actor SP_FlashSpawner : Actor
 {
 +NOTIMEFREEZE
++CANPASS
 States
   	{
   	Spawn:
 		TNT1 A 0
 		TNT1 A 1 ACS_NamedTerminate("revive_all", 0)
-		TNT1 A 1 ACS_NamedExecuteAlways("revive_all_execute", 0)
+		TNT1 A 1 ACS_NamedExecute("revive_all_execute", 0)
 		TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
 		TNT1 A 1 A_SpawnItemEx ("SP_PlayerSpawner",0,0,0,0,0,0,0,0,0,32035)
 		TNT1 A 1

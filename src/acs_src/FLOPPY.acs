@@ -1,6 +1,8 @@
 #library "FLOPPY" // Name of the library
 #include "zcommon.acs"
 
+//BUG: Zandronum will crash if this system gets pushed to it's limit. EG: 64 Players + Hitting Checkpoints Often
+
 //////////////////////////////////////////////////////////////
 //						SAVE DISK START						//
 //////////////////////////////////////////////////////////////
@@ -18,7 +20,7 @@ if(!PlayerKeyDown(-1, BT_ZOOM))
 	{
 	GiveInventory ("SP_PowerLoad", 1);
 	}
-	
+
 	//Teleport(32035, 0, 1);
 	SetHudSize(320,240,0);
 	until (RoomForWarp() || PlayerKeyDown(-1, BT_ZOOM))
@@ -35,7 +37,7 @@ if(!PlayerKeyDown(-1, BT_ZOOM))
 	{
 	ChangeActorAngle(0,Random(0.0,1.0));
 	}
-	
+
 	ThrustThingZ(0, Random(GetCvar("sp_spawnzvelocitymin"),GetCvar("sp_spawnzvelocitymax")), 0, 0);
 	ThrustThing(Random(0,256),GetCvar("sp_spawnxyvelocity"), 1, 0);
 	}
@@ -57,12 +59,12 @@ script "checkpoint_wipe" (void)
 script "checkpoint_hit" (void)
 {
 	CHECKINIT = TRUE;
-	
+
 	if(GetCvar("sp_protectactivator") == true)
 	{
 	GiveInventory ("SP_PowerSaved", 1);
 	}
-		
+
 	if (GameType() != GAME_SINGLE_PLAYER)
 	{
 	HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
@@ -80,7 +82,7 @@ script "checkpoint_hit" (void)
 
 script "revive_all_execute" (void)
 {
-ACS_NamedExecuteAlways("revive_all", 0,GetCvar("sp_resdelay"));
+ACS_NamedExecute("revive_all", 0,GetCvar("sp_resdelay"));
 }
 
 //Revives all players.
@@ -108,7 +110,7 @@ script "iamlegend" (void)
 }
 
 script "sp_getlocation"(void) NET
-{ 
+{
 AmbientSound("SAVED", 127);
 print(s:"X: ",f:GetActorX(0),s:"\nY: ",f:GetActorY(0),s:"\nZ: ",f:GetActorZ(0),s:"\nANGLE: ",i:GetActorAngle(0) >> 8);
 }
