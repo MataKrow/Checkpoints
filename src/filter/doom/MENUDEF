@@ -1,4 +1,6 @@
 AddOptionMenu "OptionsMenu"
 {
+	StaticText ""
 	Submenu "$SP_TITLE", "Checkpoint"
+	StaticText ""
 }
