@@ -8,7 +8,7 @@ Actor SP_SaveDisk : CustomInventory 20027
 Height 56
 Radius 25
 Mass 4
-Inventory.PickupMessage "\c[Chlorine]You have reached a Checkpoint."
+Inventory.PickupMessage "\c[Chlorine]You've reached a Checkpoint."
 Inventory.PickupFlash "SP_FlashSpawner"
 Inventory.PickupSound ""
 +BRIGHT
@@ -29,6 +29,7 @@ States
 		Stop
   	Pickup:
 		SAVE A 0 ACS_NamedExecute("checkpoint_hit", 0)
+		SAVE A 0 ACS_NamedExecute("SP_MOVINGPOINT_TRUE/FALSE", 0,0)
 		//SAVE A 1 A_SpawnItemEx ("SP_FlashSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0,0)
 		SAVE A 0 AutoSave
     	Stop
@@ -48,6 +49,7 @@ States
 		TNT1 A 1 ACS_NamedExecute("revive_all_execute", 0)
 		TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
 		TNT1 A 1 A_SpawnItemEx ("SP_PlayerSpawner",0,0,0,0,0,0,0,0,0,32035)
+		SAVE A 0 ACS_NamedExecute("SP_MOVINGPOINT_TRUE/FALSE", 0,1)
 		TNT1 A 1
 		Stop
   	}

@@ -1,47 +1,50 @@
 #library "FLOPPY" // Name of the library
 #include "zcommon.acs"
 
-//BUG: Zandronum will crash if this system gets pushed to it's limit. EG: 64 Players + Hitting Checkpoints Often
+//WARNING: Zandronum will potentially crash if you start to chug Checkpoints with people.
 
 //////////////////////////////////////////////////////////////
 //						SAVE DISK START						//
 //////////////////////////////////////////////////////////////
 bool CHECKINIT;
-
+bool SP_MOVINGPOINT = FALSE;
 
 //Warps player to checkpoint set and Gives SP_PowerLoad to player
 script "checkpoint_warp" RESPAWN
 {
 if(!PlayerKeyDown(-1, BT_ZOOM))
 	{
-	IF (CHECKINIT == TRUE)
-	{
-	if(GetCvar("sp_protectspawned") == true)
-	{
-	GiveInventory ("SP_PowerLoad", 1);
-	}
+		IF (CHECKINIT == TRUE)
+		{
+			if(GetCvar("sp_protectspawned") == true)
+			{
+				GiveInventory ("SP_PowerLoad", 1);
+			}
 
-	//Teleport(32035, 0, 1);
-	SetHudSize(320,240,0);
-	until (RoomForWarp() || PlayerKeyDown(-1, BT_ZOOM))
-	{
-	HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
-	HudMessage(s:"\c[Chlorine]            Waiting to warp...\n Hold the Zoom Key to cancel."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
-	delay(35);
-	}
-	SetHudSize(0, 0, FALSE);
-	//SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), true);
-	if(!PlayerKeyDown(-1, BT_ZOOM))
-	{
-		if(GetCvar("sp_randomspawnangle") == true)
-	{
-	ChangeActorAngle(0,Random(0.0,1.0));
-	}
+			//Teleport(32035, 0, 1);
+			if (!SP_MOVINGPOINT)
+			{
+			SetHudSize(320,240,0);
+			until (RoomForWarp() || PlayerKeyDown(-1, BT_ZOOM))
+				{
+					HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
+					HudMessage(s:"\c[Chlorine]            Waiting to warp...\n Hold the Zoom Key to cancel."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+					delay(35);
+				}
+			SetHudSize(0, 0, FALSE);
+			//SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), true);
+			if(!PlayerKeyDown(-1, BT_ZOOM))
+				{
+				if(GetCvar("sp_randomspawnangle") == true)
+					{
+						ChangeActorAngle(0,Random(0.0,1.0));
+					}
 
-	ThrustThingZ(0, Random(GetCvar("sp_spawnzvelocitymin"),GetCvar("sp_spawnzvelocitymax")), 0, 0);
-	ThrustThing(Random(0,256),GetCvar("sp_spawnxyvelocity"), 1, 0);
-	}
-	}
+				ThrustThingZ(0, Random(GetCvar("sp_spawnzvelocitymin"),GetCvar("sp_spawnzvelocitymax")), 0, 0);
+				ThrustThing(Random(0,256),GetCvar("sp_spawnxyvelocity"), 1, 0);
+				}
+			}
+		}
 	}
 }
 
@@ -122,6 +125,35 @@ function bool PlayerKeyDown(int player, int key)
 	if ((buttons & key) == key) { return true; }
 		return false;
 }
+
+script "SP_MOVINGPOINT_TRUE/FALSE" (int io)
+{
+
+	switch(io)
+	{
+	case 0:
+		Log(s:"SP_MOVINGPOINT TOGGLED");
+		SP_MOVINGPOINT = TRUE;
+	break;
+	case 1:
+		Log(s:"SP_MOVINGPOINT UNTOGGLED");
+		SP_MOVINGPOINT = FALSE;
+	break;
+	}
+	/*
+	if (io <= 0)
+	{
+		Log(s:"SP_MOVINGPOINT TOGGLED");
+		SP_MOVINGPOINT = TRUE;
+	}
+	if(io >= 1)
+	{
+		Log(s:"SP_MOVINGPOINT UNTOGGLED");
+		SP_MOVINGPOINT = FALSE;
+	}
+	*/
+}
+
 
 function bool RoomForWarp(void)
 {
