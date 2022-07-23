@@ -14,17 +14,121 @@
 
 script "Check_Points" OPEN
 {
+	int levnum;
 
 	switch (GetCvar("sp_presets"))
 	{
-	/////////////////////////////////////////////////////// ULTIMITE DOOM
-	case 1:
 
+	//////////////////////////////////////////////////////////////// ULTIMITE DOOM
+	case 1:
+		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
+		switch (levnum)
+		{
+		case 1: //MAP01
+		Log(s:"\c[Chlorine]Ultimite Doom checkpoints loaded.");
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 2:	//MAP02
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 3:	//MAP03
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 4:	//MAP04
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 5:	//MAP05
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 6:	//MAP06
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 7:	//MAP07
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 8:	//MAP08
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 9:	//MAP09
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 10:	//MAP10
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 11:	//MAP11
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 12:	//MAP12
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 13:	//MAP13
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 14:	//MAP14
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 15:	//MAP15
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 16:	//MAP16
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 17:	//MAP17
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 18:	//MAP18
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 19:	//MAP19
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 20:	//MAP20
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 21:	//MAP21
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 22:	//MAP22
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 23:	//MAP23
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 24:	//MAP24
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 25:	//MAP25
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 26:	//MAP26
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 27:	//MAP27
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 28:	//MAP28
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 29:	//MAP29
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 30:	//MAP30
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 31:	//MAP31
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 32:	//MAP32
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		default:
+		break;
+		}
 	break;
 
-	/////////////////////////////////////////////////////// DOOM 2
+	//////////////////////////////////////////////////////////////////// DOOM 2
 	case 2:
-		int levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
+		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
 		switch (levnum)
 		{
 		case 1: //MAP01
@@ -49,11 +153,304 @@ script "Check_Points" OPEN
 		case 7:	//MAP07
 		PlaceCheckpoint(0.0,0.0,0.0,0);
 		break;
+		case 8:	//MAP08
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 9:	//MAP09
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 10:	//MAP10
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 11:	//MAP11
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 12:	//MAP12
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 13:	//MAP13
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 14:	//MAP14
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 15:	//MAP15
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 16:	//MAP16
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 17:	//MAP17
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 18:	//MAP18
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 19:	//MAP19
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 20:	//MAP20
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 21:	//MAP21
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 22:	//MAP22
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 23:	//MAP23
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 24:	//MAP24
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 25:	//MAP25
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 26:	//MAP26
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 27:	//MAP27
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 28:	//MAP28
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 29:	//MAP29
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 30:	//MAP30
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 31:	//MAP31
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 32:	//MAP32
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		default:
+		break;
+		}
+	break;
+
+	//////////////////////////////////////////////////////////////// TNT: Evilution
+	case 3:
+		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
+		switch (levnum)
+		{
+		case 1: //MAP01
+		Log(s:"\c[Chlorine]TNT: Evilution checkpoints loaded.");
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 2:	//MAP02
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 3:	//MAP03
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 4:	//MAP04
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 5:	//MAP05
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 6:	//MAP06
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 7:	//MAP07
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 8:	//MAP08
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 9:	//MAP09
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 10:	//MAP10
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 11:	//MAP11
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 12:	//MAP12
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 13:	//MAP13
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 14:	//MAP14
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 15:	//MAP15
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 16:	//MAP16
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 17:	//MAP17
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 18:	//MAP18
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 19:	//MAP19
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 20:	//MAP20
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 21:	//MAP21
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 22:	//MAP22
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 23:	//MAP23
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 24:	//MAP24
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 25:	//MAP25
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 26:	//MAP26
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 27:	//MAP27
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 28:	//MAP28
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 29:	//MAP29
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 30:	//MAP30
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 31:	//MAP31
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 32:	//MAP32
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		default:
+		break;
+		}
+	break;
+
+	//////////////////////////////////////////////////////////////// The Plutonia Experiment
+	case 4:
+		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
+		switch (levnum)
+		{
+		case 1: //MAP01
+		Log(s:"\c[Chlorine]The Plutonia Experiment checkpoints loaded.");
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 2:	//MAP02
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 3:	//MAP03
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 4:	//MAP04
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 5:	//MAP05
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 6:	//MAP06
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 7:	//MAP07
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 8:	//MAP08
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 9:	//MAP09
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 10:	//MAP10
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 11:	//MAP11
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 12:	//MAP12
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 13:	//MAP13
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 14:	//MAP14
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 15:	//MAP15
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 16:	//MAP16
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 17:	//MAP17
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 18:	//MAP18
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 19:	//MAP19
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 20:	//MAP20
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 21:	//MAP21
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 22:	//MAP22
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 23:	//MAP23
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 24:	//MAP24
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 25:	//MAP25
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 26:	//MAP26
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 27:	//MAP27
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 28:	//MAP28
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 29:	//MAP29
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 30:	//MAP30
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 31:	//MAP31
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
+		case 32:	//MAP32
+		PlaceCheckpoint(0.0,0.0,0.0,0);
+		break;
 		default:
 		break;
 		}
 		break;
+
+	break;
+
 	///////////////////////////////////////////////////////
+
 	}
 }
 
