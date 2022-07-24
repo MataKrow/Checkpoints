@@ -12,7 +12,7 @@ bool SP_MOVINGPOINT = FALSE;
 //Warps player to checkpoint set and Gives SP_PowerLoad to player
 script "checkpoint_warp" RESPAWN
 {
-if(!PlayerKeyDown(-1, BT_ZOOM))
+if(!PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_Zcancel") == true || !GetCvar("sp_Zcancel"))
 	{
 		IF (CHECKINIT == TRUE)
 		{
@@ -25,21 +25,24 @@ if(!PlayerKeyDown(-1, BT_ZOOM))
 			if (!SP_MOVINGPOINT)
 			{
 			SetHudSize(320,240,0);
-			until (RoomForWarp() || PlayerKeyDown(-1, BT_ZOOM))
+			until (PlayerKeyDown(-1, BT_ZOOM) && !GetCvar("sp_Zcancel") || RoomForWarp())
 				{
 					HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
+					if (GetCvar("sp_Zcancel") == true)
+					{
 					HudMessage(s:"\c[Chlorine]            Waiting to warp...\n Hold the Zoom Key to cancel."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+					}
+					else
+					{
+					HudMessage(s:"\c[Chlorine]            Waiting to warp..."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+					}
 					delay(35);
 				}
 			SetHudSize(0, 0, FALSE);
 			//SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), true);
-			if(!PlayerKeyDown(-1, BT_ZOOM))
+			if(!PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_Zcancel") == true)
 				{
-				if(GetCvar("sp_randomspawnangle") == true)
-					{
-						ChangeActorAngle(0,Random(0.0,1.0));
-					}
-
+				ChangeActorAngle(0,Random(0.0,1.0));
 				ThrustThingZ(0, Random(GetCvar("sp_spawnzvelocitymin"),GetCvar("sp_spawnzvelocitymax")), 0, 0);
 				ThrustThing(Random(0,256),GetCvar("sp_spawnxyvelocity"), 1, 0);
 				}
@@ -115,8 +118,8 @@ script "iamlegend" (void)
 script "sp_getlocation"(void) NET
 {
 AmbientSound("SAVED", 127);
-print(s:"X: ",f:GetActorX(0),s:"\nY: ",f:GetActorY(0),s:"\nZ: ",f:GetActorZ(0),s:"\nANGLE: ",i:GetActorAngle(0) >> 8);
-Log(s:"PlaceCheckpoint(",f:GetActorX(0),s:",",f:GetActorY(0),s:",",f:GetActorZ(0),s:",",i:GetActorAngle(0) >> 8,s:");");
+print(s:"X: ",f:GetActorX(0),s:"\nY: ",f:GetActorY(0),s:"\nZ: ",f:GetActorZ(0));
+Log(s:"PlaceCheckpoint(",f:GetActorX(0),s:",",f:GetActorY(0),s:",",f:GetActorZ(0),s:");");
 }
 
 function bool PlayerKeyDown(int player, int key)
@@ -133,11 +136,9 @@ script "SP_MOVINGPOINT_TRUE/FALSE" (int io)
 	switch(io)
 	{
 	case 0:
-		Log(s:"SP_MOVINGPOINT TOGGLED");
 		SP_MOVINGPOINT = TRUE;
 	break;
 	case 1:
-		Log(s:"SP_MOVINGPOINT UNTOGGLED");
 		SP_MOVINGPOINT = FALSE;
 	break;
 	}

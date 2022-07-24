@@ -1,5 +1,5 @@
-alias sp_resettodefaults "sp_protectactivator TRUE; sp_protectspawned TRUE; sp_randomspawnangle FALSE; sp_spawnzvelocitymin 28; sp_spawnzvelocitymax 32; sp_spawnxyvelocity 5; sp_resdelay 14"
-addmenukey "Checkpoint Options" openmenu Checkpoint
+alias sp_resettodefaults "sp_protectactivator TRUE; sp_protectspawned TRUE; sp_spawnzvelocitymin 28; sp_spawnzvelocitymax 32; sp_spawnxyvelocity 5; sp_resdelay 14; sp_presets 0; sp_Zcancel 1"
+addmenukey "Checkpoint Options" "openmenu Checkpoint"
 alias Checkpoint "openmenu Checkpoint"
 alias Checkpoints "openmenu Checkpoint"
 alias CPOp "openmenu Checkpoint"

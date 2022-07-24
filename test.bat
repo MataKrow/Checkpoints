@@ -80,6 +80,6 @@ exit
  echo Done replacing.
 move .\BUILD.ipk3 D:\Doom\SourcePorts\GZDoom
 cd D:\Doom\SourcePorts\GZDoom
-start .gzdoom.exe -host 2 +name Player -noautoload  +vid_fullscreen 0 +developer 2 +idmypos 1 +vid_fps 1 +am_cheat 2 +noise 0 +map NULL +sv_cheats 1 -noidle +vid_defwidth 800 +vid_defheight 450 -0 +win_x 41 +win_y 523
-start .gzdoom.exe -join DESKTOP-L61LU53 +name Player2 -noautoload +vid_fullscreen 0 +developer 2 +idmypos 1 +vid_fps 1 +map NULL +am_cheat 2 +noise 0 +sv_cheats 1 -noidle +vid_defwidth 800 +vid_defheight 450 +win_x 864 +win_y 523
+start .gzdoom.exe -host 2 +name Player -noautoload  +vid_fullscreen 0 +developer 2 +idmypos 1 +vid_fps 1 +am_cheat 2 +noise 0 +map NULL +sv_cheats 1 -noidle +vid_defwidth 800 +vid_defheight 450 -0 +win_x 41 +win_y 523 -file %ProjName%.ipk3
+start .gzdoom.exe -join DESKTOP-L61LU53 +name Player2 -noautoload +vid_fullscreen 0 +developer 2 +idmypos 1 +vid_fps 1 +map NULL +am_cheat 2 +noise 0 +sv_cheats 1 -noidle +vid_defwidth 800 +vid_defheight 450 +win_x 864 +win_y 523 -file %ProjName%.ipk3
 exit

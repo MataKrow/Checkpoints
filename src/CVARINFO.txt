@@ -4,13 +4,14 @@ server bool sp_protectspawned = TRUE;
 
 //Respawning Options
 
-server bool sp_randomspawnangle = FALSE;
 server int sp_spawnzvelocitymin = 28;
 server int sp_spawnzvelocitymax = 32;
 server int sp_spawnxyvelocity = 5;
 
+server bool sp_Zcancel = TRUE;
+
 server int sp_resdelay = 14;
 
-server int sp_presets = 2;
+server int sp_presets = 0;
 
 
