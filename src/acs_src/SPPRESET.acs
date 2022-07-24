@@ -886,53 +886,51 @@ script "Check_Points" OPEN
 		{
 		case 1: //MAP01
 		Log(s:"\c[Chlorine]AUGER; ZENITH");
-		PlaceCheckpoint(1771.92,365.976,80);
+		PlaceCheckpoint(1640.57,609.531,88);
 		break;
 		case 2:		//MAP02
-		PlaceCheckpoint(0.0,0.0,0.0);
+
 		break;
 		case 3:		//MAP03
-		PlaceCheckpoint(0.0,0.0,0.0);
+
 		break;
 		case 4:		//MAP04
-		PlaceCheckpoint(0.0,0.0,0.0);
+
 		break;
 		case 5:		//MAP05
 		PlaceCheckpoint(185.978,2325.91,768);
 		break;
 		case 6:		//MAP06
-		PlaceCheckpoint(-1683.49,-5173.91,-632);
+		PlaceCheckpoint(-2061.93,-5120.59,-648);
 		break;
 		case 7:		//MAP07
 		PlaceCheckpoint(3833.4,1089.31,329);
 		break;
 		case 8:		//MAP08
-		PlaceCheckpoint(0.0,0.0,0.0);
 		break;
 		case 9:		//MAP09
-		PlaceCheckpoint(0.0,0.0,0.0);
 		break;
 		case 10:	//MAP10
 		PlaceCheckpoint(-6977.98,-2171.73,340);
-		PlaceCheckpoint(-6973.34,400.191,120);
+		PlaceCheckpoint(-6699.04,362.849,128);
 		break;
 		case 11:	//MAP11
 		PlaceCheckpoint(4244.62,-1907.33,256);
 		break;
 		case 12:	//MAP12
-		PlaceCheckpoint(-8029.5,-30687.2,0);
+		PlaceCheckpoint(-8065.75,-31807.6,64);
 		break;
 		case 13:	//MAP13
-		PlaceCheckpoint(1588.42,-1323.89,-672);
+		PlaceCheckpoint(1472.71,-1632.96,-704);
 		break;
 		case 14:	//MAP14
-		PlaceCheckpoint(-4014.85,2816.34,48);
+		PlaceCheckpoint(-4025.61,2724.68,48);
 		break;
 		case 15:	//MAP15
 		PlaceCheckpoint(-2049.39,2479.77,24);
 		break;
 		case 16:	//MAP16
-		PlaceCheckpoint(2227.16,2341.04,-224);
+		PlaceCheckpoint(4866.51,1422.75,-412.435);
 		PlaceCheckpoint(3256.35,-1782.55,-200);
 		break;
 		case 17: //MAP17
@@ -944,46 +942,13 @@ script "Check_Points" OPEN
 		PlaceCheckpoint(-980.97,591.432,144);
 		break;
 		case 19:	//MAP19
-		PlaceCheckpoint(275.718,1088.83,0);
+		PlaceCheckpoint(351.269,979.555,0);
 		break;
 		case 20:	//MAP20
-		PlaceCheckpoint(0.0,0.0,0.0);
+		PlaceCheckpoint(2027.65,-687.068,160);
 		break;
 		case 21:	//MAP21
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 22:	//MAP22
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 23:	//MAP23
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 24:	//MAP24
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 25:	//MAP25
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 26:	//MAP26
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 27:	//MAP27
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 28:	//MAP28
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 29:	//MAP29
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 30:	//MAP30
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 31:	//MAP31
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 32:	//MAP32
-		PlaceCheckpoint(0.0,0.0,0.0);
+		PlaceCheckpoint(-853.632,3740.19,136);
 		break;
 		default:
 		break;

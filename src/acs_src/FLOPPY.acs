@@ -117,7 +117,7 @@ script "iamlegend" (void)
 
 script "sp_getlocation"(void) NET
 {
-AmbientSound("SAVED", 127);
+LocalAmbientSound("SAVED", 127);
 print(s:"X: ",f:GetActorX(0),s:"\nY: ",f:GetActorY(0),s:"\nZ: ",f:GetActorZ(0));
 Log(s:"PlaceCheckpoint(",f:GetActorX(0),s:",",f:GetActorY(0),s:",",f:GetActorZ(0),s:");");
 }
