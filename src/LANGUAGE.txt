@@ -1,14 +1,13 @@
 [enu default]
 
-SP_TITLE = "\c[Chlorine]Checkpoint Options";
-SP_TITLE2 = "\c[Chlorine]Checkpoint Presets";
-SP_RESET = "\c[Orange]Reset to defaults";
-SP_UIHEADER1 = "\c[Chlorine]Spawn Protection";
-SP_UIHEADER2 = "\c[Chlorine]Respawning Options";
-SP_AUTHOR = "\c[Chlorine]Checkpoints v1.0 by Matacrat";
-SP_UIHEADERZANDY = "\c[Chlorine]Zandronum Exclusive Options";
-//SP_TELEFRAGWARNING= "\c[DarkGray]WARNING: LOW VALUES INVOKE TELEFRAGGING!";
+sp_TITLE = "\c[Chlorine]Checkpoint Options";
+sp_TITLE2 = "\c[Chlorine]Checkpoint Presets";
+sp_RESET = "\c[Orange]Reset to defaults";
+sp_UIHEADER1 = "\c[Chlorine]Spawn Protection";
+sp_UIHEADER2 = "\c[Chlorine]Respawning Options";
+sp_AUTHOR = "\c[Chlorine]Checkpoints v1.0 by Matacrat";
+sp_UIHEADERZANDY = "\c[Chlorine]Zandronum Exclusive Options";
 
-SP_UIHEADER3 = "\c[Chlorine]IWADS";
-SP_UIHEADER4 = "\c[Chlorine]PWADS";
-SP_UIHEADER5 = "\c[Chlorine]USER-DEFINED";
+sp_UIHEADER3 = "\c[Chlorine]IWADS";
+sp_UIHEADER4 = "\c[Chlorine]PWADS";
+sp_UIHEADER5 = "\c[Chlorine]USER-DEFINED";

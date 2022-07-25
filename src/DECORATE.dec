@@ -1,5 +1,4 @@
-// FIX: ANGLE SNAPS TO cardinal point.
-Actor SP_SaveDisk : CustomInventory 20027
+Actor sp_SaveDisk : CustomInventory 20027
 {
 //$Title Save Disk
 //$Category Essential
@@ -8,9 +7,9 @@ Actor SP_SaveDisk : CustomInventory 20027
 //$NotAngled
 Height 56
 Radius 25
-Mass 4
+Mass 1000
 Inventory.PickupMessage "\c[Chlorine]You've reached a Checkpoint."
-Inventory.PickupFlash "SP_FlashSpawner"
+Inventory.PickupFlash "sp_FlashSpawner"
 Inventory.PickupSound ""
 +BRIGHT
 +CANPASS
@@ -22,7 +21,6 @@ Inventory.PickupSound ""
 +NOTIMEFREEZE
 +FIXMAPTHINGPOS
 +DONTGIB
-+DONTTHRUST
 
 States
 	{
@@ -31,35 +29,36 @@ States
 		Stop
   	Pickup:
 		SAVE A 0 ACS_NamedExecute("checkpoint_hit", 0)
-		SAVE A 0 ACS_NamedExecute("SP_MOVINGPOINT_TRUE/FALSE", 0,0)
+		SAVE A 0 ACS_NamedExecute("sp_MovingPoint_TRUE/FALSE", 0,0)
 		SAVE A 0 AutoSave
     	Stop
   	}
 
 }
 
-Actor SP_FlashSpawner : Actor
+Actor sp_FlashSpawner : Actor
 {
 +NOTIMEFREEZE
 +CANPASS
 -SOLID
 +NOBLOCKMAP
-+DONTTHRUST
+Height 0
+Radius 24
 States
   	{
   	Spawn:
 		TNT1 A 0
-		TNT1 A 1 ACS_NamedTerminate("revive_all", 0)
-		TNT1 A 1 ACS_NamedExecute("revive_all_execute", 0)
+		TNT1 A 1 ACS_NamedTerminate("sp_revive_all", 0)
+		TNT1 A 1 ACS_NamedExecute("sp_init_revive_all", 0)
 		TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
-		TNT1 A 1 A_SpawnItemEx ("SP_PlayerSpawner",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE,0,32035)
-		SAVE A 0 ACS_NamedExecute("SP_MOVINGPOINT_TRUE/FALSE", 0,1)
+		TNT1 A 1 A_SpawnItemEx ("sp_PlayerSpawner",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE,0,32035)
+		SAVE A 0 ACS_NamedExecute("sp_MovingPoint_TRUE/FALSE", 0,1)
 		TNT1 A 1
 		Stop
   	}
 }
 
-Actor SP_PlayerSpawner : BlueParticleFountain
+Actor sp_PlayerSpawner : BlueParticleFountain
 {
 +NOTIMEFREEZE
 +CANPASS
@@ -68,16 +67,15 @@ Actor SP_PlayerSpawner : BlueParticleFountain
 +NEVERRESPAWN
 +FIXMAPTHINGPOS
 -SOLID
-+DONTTHRUST
 }
 
-Actor SP_PowerSaved : PowerInvulnerable
+Actor sp_PowerSaved : PowerInvulnerable
 {
 inventory.icon "SAVEDISK"
 Powerup.Duration 53
 }
 
-Actor SP_PowerLoad : SP_PowerSaved
+Actor sp_PowerLoad : sp_PowerSaved
 {
 inventory.icon "STCDROM"
 Powerup.Duration 105

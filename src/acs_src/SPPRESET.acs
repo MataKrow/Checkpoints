@@ -3,7 +3,6 @@
 
 int levnum;
 
-//TODO: ADD A THINKER TO DECIDE WHITCH SCRIPT TO LOAD NO MORE CASES PLEASE
 //TODO: TNT 2: Devilution
 
 //////////////////////////////////////////////////////////////
@@ -12,16 +11,21 @@ int levnum;
 
 script "Check_Points_User_Defined" OPEN
 {
-	switch (GetCvar("sp_presets")) //Reads from the subsequent cvar.
+	switch (GetCvar("sp_Presets")) //Reads from the sp_Presets cvar.
 	{
 		case 1000: //Sets a value the cvar can draw from
 		levnum = GetLevelInfo(LEVELINFO_LEVELNUM); //Gets the levelnums from the mapinfo
-		switch (levnum)
+		switch (levnum) //switch statement
 		{
 		case 1: //MAP01
 		Log(s:"\c[Chlorine]USER-DEFINED checkpoints loaded."); //Message to tell the player that checkpoints have loaded.
-		PlaceCheckpoint(0,0,0); // Places the checkpoint by values XYZ
-		break; //Ends case 1
+		PlaceCheckpoint(0.0,0.0,0.0); // Places the checkpoint by values XYZ
+		PlaceCheckpoint(0.0,0.0,0.0); // Places the checkpoint by values XYZ
+		break; //Ends script for map 01
+
+		case 2: //MAP02
+		PlaceCheckpoint(0.0,0.0,0.0); // Places the checkpoint by values XYZ
+		break; //Ends script for map 02
 		}
 	}
 }
@@ -31,7 +35,7 @@ script "Check_Points_User_Defined" OPEN
 //////////////////////////////////////////////////////////////
 script "Check_Points_IWAD" OPEN
 {
-	switch (GetCvar("sp_presets"))
+	switch (GetCvar("sp_Presets"))
 	{
 
 	//////////////////////////////////////////////////////////////// NOTHING
@@ -795,7 +799,7 @@ script "Check_Points_IWAD" OPEN
 
 script "Check_Points_PWAD" OPEN
 {
-	switch (GetCvar("sp_presets"))
+	switch (GetCvar("sp_Presets"))
 	{
 	//////////////////////////////////////////////////////////////// Alien Vendetta
 	case 201: //Possibly a problem in 20XX
@@ -974,7 +978,7 @@ script "Check_Points_PWAD" OPEN
 //Values execpt the last one must be fixed-point.
 function void PlaceCheckpoint(int sdx,int sdy,int sdz)
 {
-SpawnForced("SP_SaveDisk",sdx,sdy,sdz,0,0);
+SpawnForced("sp_SaveDisk",sdx,sdy,sdz,0,0);
 }
 
 /*

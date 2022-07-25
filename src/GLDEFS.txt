@@ -12,24 +12,19 @@ pulselight SavePulse
     interval 10
     dontlightself 0
     offset 0 35 0
-} 
+}
 
-object SP_SaveDisk
+object sp_SaveDisk
 {
     frame SAVEA0 { light SavePulse }
 }
 
-pulselight CheckPulse
+object sp_PlayerSpawner
 {
-    color 0 0.1 0.5
-    size 24
-    secondarySize 8
-    interval 10
-    dontlightself 0
-    offset 0 35 0
-} 
+    frame TNT1A0 { light SavePulse }
+}
 
-object SP_PlayerSpawner
+object sp_FlashSpawner
 {
     frame TNT1A0 { light SavePulse }
 }

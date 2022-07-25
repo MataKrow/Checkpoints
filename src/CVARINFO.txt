@@ -1,17 +1,18 @@
 //Spawn Protection
-server bool sp_protectactivator = TRUE;
-server bool sp_protectspawned = TRUE;
+server bool sp_ProtectActivator = TRUE;
+server bool sp_ProtectSpawned = TRUE;
 
 //Respawning Options
 
-server int sp_spawnzvelocitymin = 28;
-server int sp_spawnzvelocitymax = 32;
-server int sp_spawnxyvelocity = 5;
+server int sp_SpawnVelocityZ_Min = 28;
+server int sp_SpawnVelocityZ_Max = 32;
+server int sp_SpawnVelocityXY = 5;
 
-server bool sp_Zcancel = TRUE;
+server bool sp_ZCancel = TRUE;
 
-server int sp_resdelay = 14;
+server int sp_ResDelay = 14;
 
-server int sp_presets = 0;
+//Presets
+server int sp_Presets = 0;
 
 

@@ -7,27 +7,32 @@
 //						SAVE DISK START						//
 //////////////////////////////////////////////////////////////
 bool CHECKINIT;
-bool SP_MOVINGPOINT = FALSE;
+bool sp_MovingPoint = FALSE;
 
-//Warps player to checkpoint set and Gives SP_PowerLoad to player
+script "checkpoint_warp_connected" ENTER
+{
+	ACS_NamedExecuteAlways("checkpoint_warp",0);
+}
+
+//Warps player to checkpoint set and Gives sp_PowerLoad to player
 script "checkpoint_warp" RESPAWN
 {
-if(!PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_Zcancel") == true || !GetCvar("sp_Zcancel"))
+if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 	{
 		IF (CHECKINIT == TRUE)
 		{
-			if(GetCvar("sp_protectactivator") == true)
+			if(GetCvar("sp_ProtectActivator") == TRUE)
 			{
-			GiveInventory ("SP_PowerLoad", 1);
+			GiveInventory ("sp_PowerLoad", 1);
 			}
 			//Teleport(32035, 0, 1);
-			if (!SP_MOVINGPOINT)
+			if (!sp_MovingPoint)
 			{
 			SetHudSize(320,240,0);
-			until (PlayerKeyDown(-1, BT_ZOOM) && !GetCvar("sp_Zcancel") || RoomForWarp())
+			until (sp_PlayerKeyDown(-1, BT_ZOOM) && !GetCvar("sp_ZCancel") || sp_RoomForWarp())
 				{
 					HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
-					if (GetCvar("sp_Zcancel") == true)
+					if (GetCvar("sp_ZCancel") == TRUE)
 					{
 					HudMessage(s:"\c[Chlorine]            Waiting to warp...\n Hold the Zoom Key to cancel."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
 					}
@@ -38,12 +43,14 @@ if(!PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_Zcancel") == true || !GetCvar("sp_
 					delay(35);
 				}
 			SetHudSize(0, 0, FALSE);
-			//SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), true);
-			if(!PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_Zcancel") == true || !GetCvar("sp_Zcancel"))
+			//SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), TRUE);
+			if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 				{
+				FadeTo(0, 0, 160,Random(0.25,0.38), 0.0);
+				FadeTo(0, 0, 0, 0.0, 0.3);
 				ChangeActorAngle(0,Random(0.0,1.0));
-				ThrustThingZ(0, Random(GetCvar("sp_spawnzvelocitymin"),GetCvar("sp_spawnzvelocitymax")), 0, 0);
-				ThrustThing(Random(0,256),GetCvar("sp_spawnxyvelocity"), 1, 0);
+				ThrustThingZ(0, Random(GetCvar("sp_SpawnVelocityZ_Min"),GetCvar("sp_SpawnVelocityZ_Max")), 0, 0);
+				ThrustThing(Random(0,256),GetCvar("sp_SpawnVelocityXY"), 1, 0);
 				}
 			}
 		}
@@ -65,9 +72,9 @@ script "checkpoint_hit" (void)
 {
 	CHECKINIT = TRUE;
 
-	if(GetCvar("sp_protectactivator") == true)
+	if(GetCvar("sp_ProtectActivator") == TRUE)
 	{
-	GiveInventory ("SP_PowerSaved", 1);
+	GiveInventory ("sp_PowerSaved", 1);
 	}
 
 	if (GameType() != GAME_SINGLE_PLAYER)
@@ -85,19 +92,19 @@ script "checkpoint_hit" (void)
 	}
 }
 
-script "revive_all_execute" (void)
+script "sp_init_revive_all" (void)
 {
-ACS_NamedExecute("revive_all", 0,GetCvar("sp_resdelay"));
+ACS_NamedExecute("sp_revive_all", 0,GetCvar("sp_ResDelay"));
 }
 
 //Revives all players.
-script "revive_all" (int time)
+script "sp_revive_all" (int time)
 {
 	delay(35);
 	int i = 0;
 		 while (i<64)
 		 {
-			SetDeadSpectator(i,false);
+			SetDeadSpectator(i,FALSE);
 			i++;
 			delay(time);
 		 }
@@ -121,46 +128,46 @@ print(s:"X: ",f:GetActorX(0),s:"\nY: ",f:GetActorY(0),s:"\nZ: ",f:GetActorZ(0));
 Log(s:"PlaceCheckpoint(",f:GetActorX(0),s:",",f:GetActorY(0),s:",",f:GetActorZ(0),s:");");
 }
 
-function bool PlayerKeyDown(int player, int key)
+function bool sp_PlayerKeyDown(int player, int key)
 {
 	int buttons = GetPlayerInput(player, INPUT_BUTTONS);
 
-	if ((buttons & key) == key) { return true; }
-		return false;
+	if ((buttons & key) == key) { return TRUE; }
+		return FALSE;
 }
 
-script "SP_MOVINGPOINT_TRUE/FALSE" (int io)
+script "sp_MovingPoint_TRUE/FALSE" (int io)
 {
 
 	switch(io)
 	{
 	case 0:
-		SP_MOVINGPOINT = TRUE;
+		sp_MovingPoint = TRUE;
 	break;
 	case 1:
-		SP_MOVINGPOINT = FALSE;
+		sp_MovingPoint = FALSE;
 	break;
 	}
 	/*
 	if (io <= 0)
 	{
-		Log(s:"SP_MOVINGPOINT TOGGLED");
-		SP_MOVINGPOINT = TRUE;
+		Log(s:"sp_MovingPoint TOGGLED");
+		sp_MovingPoint = TRUE;
 	}
 	if(io >= 1)
 	{
-		Log(s:"SP_MOVINGPOINT UNTOGGLED");
-		SP_MOVINGPOINT = FALSE;
+		Log(s:"sp_MovingPoint UNTOGGLED");
+		sp_MovingPoint = FALSE;
 	}
 	*/
 }
 
 
-function bool RoomForWarp(void)
+function bool sp_RoomForWarp(void)
 {
-	if (!SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), true))
-		return false;
-	return true;
+	if (!SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), TRUE))
+		return FALSE;
+	return TRUE;
 }
 //TODO Add a function to move all players to an activators position.
 //	   Add a function to move all players to the active checkpoint.
