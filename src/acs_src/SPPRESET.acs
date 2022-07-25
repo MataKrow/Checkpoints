@@ -7,6 +7,26 @@ int levnum;
 //TODO: TNT 2: Devilution
 
 //////////////////////////////////////////////////////////////
+//						  TEMPLATE							//
+//////////////////////////////////////////////////////////////
+
+script "Check_Points_User_Defined" OPEN
+{
+	switch (GetCvar("sp_presets")) //Reads from the subsequent cvar.
+	{
+		case 1000: //Sets a value the cvar can draw from
+		levnum = GetLevelInfo(LEVELINFO_LEVELNUM); //Gets the levelnums from the mapinfo
+		switch (levnum)
+		{
+		case 1: //MAP01
+		Log(s:"\c[Chlorine]USER-DEFINED checkpoints loaded."); //Message to tell the player that checkpoints have loaded.
+		PlaceCheckpoint(0,0,0); // Places the checkpoint by values XYZ
+		break; //Ends case 1
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////
 //						IWAD CHECKPOINTS					//
 //////////////////////////////////////////////////////////////
 script "Check_Points_IWAD" OPEN
@@ -666,7 +686,7 @@ script "Check_Points_IWAD" OPEN
 		switch (levnum)
 		{
 		case 1: //MAP01
-		Log(s:"\c[Chlorine]Chex(R) Quest 3");
+		Log(s:"\c[Chlorine]Chex(R) Quest 3 checkpoints loaded.");
 		PlaceCheckpoint(0.0,0.0,0.0);
 		break;
 		case 2:		//MAP02
@@ -783,7 +803,7 @@ script "Check_Points_PWAD" OPEN
 		switch (levnum)
 		{
 		case 1: //MAP01
-		Log(s:"Alien Vendetta");
+		Log(s:"Alien Vendetta checkpoints loaded.");
 		PlaceCheckpoint(0.0,0.0,0.0);
 		break;
 		case 2:		//MAP02
@@ -890,7 +910,7 @@ script "Check_Points_PWAD" OPEN
 		switch (levnum)
 		{
 		case 1: //MAP01
-		Log(s:"\c[Chlorine]AUGER; ZENITH");
+		Log(s:"\c[Chlorine]AUGER; ZENITH checkpoints loaded.");
 		PlaceCheckpoint(1640.57,609.531,88);
 		break;
 		case 5:		//MAP05

@@ -16,11 +16,10 @@ if(!PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_Zcancel") == true || !GetCvar("sp_
 	{
 		IF (CHECKINIT == TRUE)
 		{
-			if(GetCvar("sp_protectspawned") == true)
+			if(GetCvar("sp_protectactivator") == true)
 			{
-				GiveInventory ("SP_PowerLoad", 1);
+			GiveInventory ("SP_PowerLoad", 1);
 			}
-
 			//Teleport(32035, 0, 1);
 			if (!SP_MOVINGPOINT)
 			{
