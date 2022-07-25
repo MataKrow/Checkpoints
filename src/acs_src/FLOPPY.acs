@@ -40,7 +40,7 @@ if(!PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_Zcancel") == true || !GetCvar("sp_
 				}
 			SetHudSize(0, 0, FALSE);
 			//SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), true);
-			if(!PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_Zcancel") == true)
+			if(!PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_Zcancel") == true || !GetCvar("sp_Zcancel"))
 				{
 				ChangeActorAngle(0,Random(0.0,1.0));
 				ThrustThingZ(0, Random(GetCvar("sp_spawnzvelocitymin"),GetCvar("sp_spawnzvelocitymax")), 0, 0);

@@ -1,21 +1,16 @@
 #library "SPPRESET"
 #include "zcommon.acs"
 
-//    ANGLES
-//0    🢂  East
-//32   🢅  Northeast
-//64   🢁  North
-//96   🢄  Northwest
-//128  🢀  West
-//160  🢇  Southwest
-//192  🢃  South
-//224  🢆  Southeast
+int levnum;
 
+//TODO: ADD A THINKER TO DECIDE WHITCH SCRIPT TO LOAD NO MORE CASES PLEASE
+//TODO: TNT 2: Devilution
 
-script "Check_Points" OPEN
+//////////////////////////////////////////////////////////////
+//						IWAD CHECKPOINTS					//
+//////////////////////////////////////////////////////////////
+script "Check_Points_IWAD" OPEN
 {
-	int levnum;
-
 	switch (GetCvar("sp_presets"))
 	{
 
@@ -130,7 +125,7 @@ script "Check_Points" OPEN
 		}
 	break;
 
-	//////////////////////////////////////////////////////////////////// DOOM 2: Hell on Earth
+	//////////////////////////////////////////////////////////////// DOOM 2: Hell on Earth
 	case 2:
 		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
 		switch (levnum)
@@ -771,7 +766,17 @@ script "Check_Points" OPEN
 		break;
 		}
 		break;
+	}
+}
 
+//////////////////////////////////////////////////////////////
+//						PWAD CHECKPOINTS					//
+//////////////////////////////////////////////////////////////
+
+script "Check_Points_PWAD" OPEN
+{
+	switch (GetCvar("sp_presets"))
+	{
 	//////////////////////////////////////////////////////////////// Alien Vendetta
 	case 201: //Possibly a problem in 20XX
 		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
@@ -879,7 +884,7 @@ script "Check_Points" OPEN
 		}
 		break;
 
-//////////////////////////////////////////////////////////////// AUGER ; ZENITH
+	//////////////////////////////////////////////////////////////// AUGER ; ZENITH
 	case 202: //Possibly a problem in 20XX
 		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
 		switch (levnum)
@@ -887,15 +892,6 @@ script "Check_Points" OPEN
 		case 1: //MAP01
 		Log(s:"\c[Chlorine]AUGER; ZENITH");
 		PlaceCheckpoint(1640.57,609.531,88);
-		break;
-		case 2:		//MAP02
-
-		break;
-		case 3:		//MAP03
-
-		break;
-		case 4:		//MAP04
-
 		break;
 		case 5:		//MAP05
 		PlaceCheckpoint(185.978,2325.91,768);
@@ -905,10 +901,6 @@ script "Check_Points" OPEN
 		break;
 		case 7:		//MAP07
 		PlaceCheckpoint(3833.4,1089.31,329);
-		break;
-		case 8:		//MAP08
-		break;
-		case 9:		//MAP09
 		break;
 		case 10:	//MAP10
 		PlaceCheckpoint(-6977.98,-2171.73,340);
@@ -945,22 +937,16 @@ script "Check_Points" OPEN
 		PlaceCheckpoint(351.269,979.555,0);
 		break;
 		case 20:	//MAP20
-		PlaceCheckpoint(2027.65,-687.068,160);
+		PlaceCheckpoint(3338.55,296.999,199.007);
 		break;
 		case 21:	//MAP21
-		PlaceCheckpoint(-853.632,3740.19,136);
+		PlaceCheckpoint(-516.612,4169.93,56);
 		break;
 		default:
 		break;
 		}
 		break;
-
-
-
 	break;
-
-	///////////////////////////////////////////////////////
-
 	}
 }
 
