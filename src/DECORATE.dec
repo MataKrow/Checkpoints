@@ -30,7 +30,6 @@ States
 		Stop
   	Pickup:
 		SAVE A 0 ACS_NamedExecute("checkpoint_hit", 0)
-		SAVE A 0 ACS_NamedExecute("sp_MovingPoint_TRUE/FALSE", 0,0)
 		SAVE A 0 AutoSave
     	Stop
   	}
@@ -39,7 +38,7 @@ States
 
 Actor sp_FlashSpawner : Actor
 {
-+NOTIMEFREEZE
+-NOTIMEFREEZE
 +CANPASS
 -SOLID
 -NOGRAVITY
@@ -49,11 +48,9 @@ States
   	{
   	Spawn:
 		TNT1 A 0
-		TNT1 A 1 ACS_NamedTerminate("sp_revive_all", 0)
-		TNT1 A 1 ACS_NamedExecute("sp_init_revive_all", 0)
+		TNT1 A 0 ACS_NamedExecute("sp_init_revive_all", 0)
 		TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
 		TNT1 A 1 A_SpawnItemEx ("sp_PlayerSpawner",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE,0,32035)
-		SAVE A 0 ACS_NamedExecute("sp_MovingPoint_TRUE/FALSE", 0,1)
 		TNT1 A 1
 		Stop
   	}
@@ -62,9 +59,12 @@ States
 Actor sp_PlayerSpawner : ParticleFountain
 {
 Health 3 // Changes the Color...
+Gravity 1.0
++NOBLOCKMAP
+-NOGRAVITY
++INVISIBLE
 +NOTIMEFREEZE
 +CANPASS
--NOGRAVITY
 +NEVERRESPAWN
 +FIXMAPTHINGPOS
 -SOLID

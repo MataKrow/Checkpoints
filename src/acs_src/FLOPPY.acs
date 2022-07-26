@@ -25,8 +25,7 @@ if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("
 		{
 		GiveInventory ("sp_PowerLoad", 1);
 		}
-		//Teleport(SP_DISK_TID, 0, 1);
-		SetHudSize(320,240,0);
+		SetHudSize(320,240,FALSE);
 		until (sp_PlayerKeyDown(-1, BT_ZOOM) && !GetCvar("sp_ZCancel") || sp_RoomForWarp())
 			{
 				HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
@@ -40,11 +39,10 @@ if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("
 				}
 				delay(35);
 			}
-		SetHudSize(0, 0, FALSE);
-		//SetActorPosition(0, GetActorX(SP_DISK_TID), GetActorY(SP_DISK_TID), GetActorZ(SP_DISK_TID), TRUE);
+		SetHudSize(0, 0,FALSE);
 		if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 			{
-			FadeTo(0, 0, 160,Random(0.25,0.38), 0.0);
+			FadeTo(0, 0, 160,0.40, 0.0);
 			FadeTo(0, 0, 0, 0.0, 0.3);
 			ChangeActorAngle(0,Random(0.0,1.0));
 			ThrustThingZ(0, Random(GetCvar("sp_SpawnVelocityZ_Min"),GetCvar("sp_SpawnVelocityZ_Max")), 0, 0);
@@ -75,9 +73,9 @@ script "checkpoint_hit" (void)
 	if (GameType() != GAME_SINGLE_PLAYER)
 	{
 		HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
-		SetHudSize(320,240,0);
+		SetHudSize(320,240,FALSE);
 		HudMessageBold (s:"\c[Chlorine]",n:0,s:" just hit a checkpoint!"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING | HUDMSG_LOG, 880,"Chlorine", 160.0, 62.0, 1.0, 2.0);
-		SetHudSize(0, 0, FALSE);
+		SetHudSize(0, 0,FALSE);
 		AmbientSound("SP_CHECK", 127);
 	}
 	else
@@ -91,7 +89,10 @@ script "checkpoint_hit" (void)
 
 script "sp_init_revive_all" (void)
 {
-ACS_NamedExecute("sp_revive_all", 0,GetCvar("sp_ResDelay"));
+	if (GameType() != GAME_SINGLE_PLAYER)
+	{
+	ACS_NamedExecute("sp_revive_all", 0,GetCvar("sp_ResDelay"));
+	}
 }
 
 //Revives all players.
