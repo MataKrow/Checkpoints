@@ -7,7 +7,7 @@ Actor sp_SaveDisk : CustomInventory 20027
 //$NotAngled
 Height 56
 Radius 25
-Mass 1000
+Gravity 2.0
 Inventory.PickupMessage "\c[Chlorine]You've reached a Checkpoint."
 Inventory.PickupFlash "sp_FlashSpawner"
 Inventory.PickupSound ""
@@ -44,13 +44,14 @@ Actor sp_FlashSpawner : Actor
 -NOGRAVITY
 Height 0
 Radius 24
+Gravity 14.0
 States
   	{
   	Spawn:
 		TNT1 A 0
 		TNT1 A 0 ACS_NamedExecute("sp_init_revive_all", 0)
 		TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
-		TNT1 A 1 A_SpawnItemEx ("sp_PlayerSpawner",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE,0,32035)
+		TNT1 A 1 A_SpawnItemEx ("sp_PlayerSpawner",0,0,0,0,0,-30,0,SXF_ABSOLUTEANGLE,0,32035)
 		TNT1 A 1
 		Stop
   	}
@@ -59,8 +60,8 @@ States
 Actor sp_PlayerSpawner : ParticleFountain
 {
 Health 3 // Changes the Color...
-Gravity 1.0
-+NOBLOCKMAP
+Gravity 2.0
+-NOBLOCKMAP
 -NOGRAVITY
 +INVISIBLE
 +NOTIMEFREEZE

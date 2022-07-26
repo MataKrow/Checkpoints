@@ -137,7 +137,7 @@ function bool sp_PlayerKeyDown(int player, int key)
 
 function bool sp_RoomForWarp(void)
 {
-	if (!SetActorPosition(0, GetActorX(SP_DISK_TID), GetActorY(SP_DISK_TID), GetActorZ(SP_DISK_TID), TRUE))
+	if (!SetActorPosition(0, GetActorX(SP_DISK_TID), GetActorY(SP_DISK_TID), GetActorZ(SP_DISK_TID), TRUE && !sp_ActorExists(SP_DISK_TID)))
 		return FALSE;
 	return TRUE;
 }
