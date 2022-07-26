@@ -1,3 +1,3 @@
 # Checkpoints
  
-![logo](https://user-images.githubusercontent.com/48725508/181080174-b013a666-21b6-44a9-a226-d4bdfce5cf3a.png)
+![logo](https://user-images.githubusercontent.com/48725508/181080582-1bffeb20-c23c-4e24-846e-9ceaf8c1e5c7.png)
