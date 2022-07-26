@@ -6,6 +6,8 @@
 //////////////////////////////////////////////////////////////
 //						SAVE DISK START						//
 //////////////////////////////////////////////////////////////
+#define DISK_TID 32035
+
 bool CHECKINIT;
 bool sp_MovingPoint = FALSE;
 
@@ -19,13 +21,13 @@ script "checkpoint_warp" RESPAWN
 {
 if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 	{
-		IF (CHECKINIT == TRUE)
+		IF (sp_ActorExists(DISK_TID))
 		{
 			if(GetCvar("sp_ProtectActivator") == TRUE)
 			{
 			GiveInventory ("sp_PowerLoad", 1);
 			}
-			//Teleport(32035, 0, 1);
+			//Teleport(DISK_TID, 0, 1);
 			if (!sp_MovingPoint)
 			{
 			SetHudSize(320,240,0);
@@ -43,7 +45,7 @@ if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("
 					delay(35);
 				}
 			SetHudSize(0, 0, FALSE);
-			//SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), TRUE);
+			//SetActorPosition(0, GetActorX(DISK_TID), GetActorY(DISK_TID), GetActorZ(DISK_TID), TRUE);
 			if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 				{
 				FadeTo(0, 0, 160,Random(0.25,0.38), 0.0);
@@ -60,9 +62,9 @@ if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("
 //Clears previous checkpoints.
 script "checkpoint_wipe" (void)
 {
-	if (ClassifyActor(32035) != ACTOR_NONE)
+	if (ClassifyActor(DISK_TID) != ACTOR_NONE)
 	{
-	thing_remove(32035);
+	thing_remove(DISK_TID);
 	}
 	terminate;
 }
@@ -130,14 +132,6 @@ print(s:"X: ",f:GetActorX(0),s:"\nY: ",f:GetActorY(0),s:"\nZ: ",f:GetActorZ(0));
 Log(s:"PlaceCheckpoint(",f:GetActorX(0),s:",",f:GetActorY(0),s:",",f:GetActorZ(0),s:");");
 }
 
-function bool sp_PlayerKeyDown(int player, int key)
-{
-	int buttons = GetPlayerInput(player, INPUT_BUTTONS);
-
-	if ((buttons & key) == key) { return TRUE; }
-		return FALSE;
-}
-
 script "sp_MovingPoint_TRUE/FALSE" (int io)
 {
 
@@ -164,12 +158,32 @@ script "sp_MovingPoint_TRUE/FALSE" (int io)
 	*/
 }
 
+// Modified from acsutils
+function bool sp_PlayerKeyDown(int player, int key)
+{
+	int buttons = GetPlayerInput(player, INPUT_BUTTONS);
+
+	if ((buttons & key) == key) { return TRUE; }
+		return FALSE;
+}
 
 function bool sp_RoomForWarp(void)
 {
-	if (!SetActorPosition(0, GetActorX(32035), GetActorY(32035), GetActorZ(32035), TRUE))
+	if (!SetActorPosition(0, GetActorX(DISK_TID), GetActorY(DISK_TID), GetActorZ(DISK_TID), TRUE))
 		return FALSE;
 	return TRUE;
+}
+
+function bool sp_ActorExists(int tid)
+{
+	if (tid != 0)
+		return ClassifyActor(tid) != ACTOR_NONE;
+	return sp_notflag(ClassifyActor(tid), ACTOR_WORLD);
+}
+
+function bool sp_notflag(int flags, int flag)
+{
+	return !(flags & flag);
 }
 //TODO Add a function to move all players to an activators position.
 //	   Add a function to move all players to the active checkpoint.

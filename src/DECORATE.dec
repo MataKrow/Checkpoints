@@ -59,8 +59,9 @@ States
   	}
 }
 
-Actor sp_PlayerSpawner : BlueParticleFountain
+Actor sp_PlayerSpawner : ParticleFountain
 {
+Health 3 // Changes the Color...
 +NOTIMEFREEZE
 +CANPASS
 -NOGRAVITY
