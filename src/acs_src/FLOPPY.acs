@@ -6,10 +6,8 @@
 //////////////////////////////////////////////////////////////
 //						SAVE DISK START						//
 //////////////////////////////////////////////////////////////
-#define DISK_TID 32035
-
-bool CHECKINIT;
-bool sp_MovingPoint = FALSE;
+#define SP_DISK_TID 32035
+#define SP_MAXPLAYERS 64
 
 script "checkpoint_warp_connected" ENTER
 {
@@ -21,39 +19,36 @@ script "checkpoint_warp" RESPAWN
 {
 if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 	{
-		IF (sp_ActorExists(DISK_TID))
+		IF (sp_ActorExists(SP_DISK_TID))
 		{
-			if(GetCvar("sp_ProtectActivator") == TRUE)
+		if(GetCvar("sp_ProtectActivator") == TRUE)
+		{
+		GiveInventory ("sp_PowerLoad", 1);
+		}
+		//Teleport(SP_DISK_TID, 0, 1);
+		SetHudSize(320,240,0);
+		until (sp_PlayerKeyDown(-1, BT_ZOOM) && !GetCvar("sp_ZCancel") || sp_RoomForWarp())
 			{
-			GiveInventory ("sp_PowerLoad", 1);
+				HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
+				if (GetCvar("sp_ZCancel") == TRUE)
+				{
+				HudMessage(s:"\c[Chlorine]            Waiting to warp...\n Hold the Zoom Key to cancel."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+				}
+				else
+				{
+				HudMessage(s:"\c[Chlorine]            Waiting to warp..."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+				}
+				delay(35);
 			}
-			//Teleport(DISK_TID, 0, 1);
-			if (!sp_MovingPoint)
+		SetHudSize(0, 0, FALSE);
+		//SetActorPosition(0, GetActorX(SP_DISK_TID), GetActorY(SP_DISK_TID), GetActorZ(SP_DISK_TID), TRUE);
+		if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 			{
-			SetHudSize(320,240,0);
-			until (sp_PlayerKeyDown(-1, BT_ZOOM) && !GetCvar("sp_ZCancel") || sp_RoomForWarp())
-				{
-					HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
-					if (GetCvar("sp_ZCancel") == TRUE)
-					{
-					HudMessage(s:"\c[Chlorine]            Waiting to warp...\n Hold the Zoom Key to cancel."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
-					}
-					else
-					{
-					HudMessage(s:"\c[Chlorine]            Waiting to warp..."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
-					}
-					delay(35);
-				}
-			SetHudSize(0, 0, FALSE);
-			//SetActorPosition(0, GetActorX(DISK_TID), GetActorY(DISK_TID), GetActorZ(DISK_TID), TRUE);
-			if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
-				{
-				FadeTo(0, 0, 160,Random(0.25,0.38), 0.0);
-				FadeTo(0, 0, 0, 0.0, 0.3);
-				ChangeActorAngle(0,Random(0.0,1.0));
-				ThrustThingZ(0, Random(GetCvar("sp_SpawnVelocityZ_Min"),GetCvar("sp_SpawnVelocityZ_Max")), 0, 0);
-				ThrustThing(Random(0,256),GetCvar("sp_SpawnVelocityXY"), 1, 0);
-				}
+			FadeTo(0, 0, 160,Random(0.25,0.38), 0.0);
+			FadeTo(0, 0, 0, 0.0, 0.3);
+			ChangeActorAngle(0,Random(0.0,1.0));
+			ThrustThingZ(0, Random(GetCvar("sp_SpawnVelocityZ_Min"),GetCvar("sp_SpawnVelocityZ_Max")), 0, 0);
+			ThrustThing(Random(0,256),GetCvar("sp_SpawnVelocityXY"), 1, 0);
 			}
 		}
 	}
@@ -62,9 +57,9 @@ if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("
 //Clears previous checkpoints.
 script "checkpoint_wipe" (void)
 {
-	if (ClassifyActor(DISK_TID) != ACTOR_NONE)
+	if (sp_ActorExists(SP_DISK_TID))
 	{
-	thing_remove(DISK_TID);
+	thing_remove(SP_DISK_TID);
 	}
 	terminate;
 }
@@ -72,8 +67,6 @@ script "checkpoint_wipe" (void)
 //Logs "[PLAYERNAME] just hit a checkpoint!" and revives everyone.
 script "checkpoint_hit" (void)
 {
-	CHECKINIT = TRUE;
-
 	if(GetCvar("sp_ProtectActivator") == TRUE)
 	{
 		GiveInventory ("sp_PowerSaved", 1);
@@ -106,7 +99,7 @@ script "sp_revive_all" (int time)
 {
 	delay(35);
 	int i = 0;
-		 while (i<64)
+		 while (i<SP_MAXPLAYERS)
 		 {
 			SetDeadSpectator(i,FALSE);
 			i++;
@@ -117,7 +110,7 @@ script "sp_revive_all" (int time)
 script "iamlegend" (void)
 {
 	int i = 1;
-		 while (i<64)
+		 while (i<SP_MAXPLAYERS)
 		 {
 			SetDeadSpectator(i,TRUE);
 			i++;
@@ -132,32 +125,6 @@ print(s:"X: ",f:GetActorX(0),s:"\nY: ",f:GetActorY(0),s:"\nZ: ",f:GetActorZ(0));
 Log(s:"PlaceCheckpoint(",f:GetActorX(0),s:",",f:GetActorY(0),s:",",f:GetActorZ(0),s:");");
 }
 
-script "sp_MovingPoint_TRUE/FALSE" (int io)
-{
-
-	switch(io)
-	{
-	case 0:
-		sp_MovingPoint = TRUE;
-	break;
-	case 1:
-		sp_MovingPoint = FALSE;
-	break;
-	}
-	/*
-	if (io <= 0)
-	{
-		Log(s:"sp_MovingPoint TOGGLED");
-		sp_MovingPoint = TRUE;
-	}
-	if(io >= 1)
-	{
-		Log(s:"sp_MovingPoint UNTOGGLED");
-		sp_MovingPoint = FALSE;
-	}
-	*/
-}
-
 // Modified from acsutils
 function bool sp_PlayerKeyDown(int player, int key)
 {
@@ -169,7 +136,7 @@ function bool sp_PlayerKeyDown(int player, int key)
 
 function bool sp_RoomForWarp(void)
 {
-	if (!SetActorPosition(0, GetActorX(DISK_TID), GetActorY(DISK_TID), GetActorZ(DISK_TID), TRUE))
+	if (!SetActorPosition(0, GetActorX(SP_DISK_TID), GetActorY(SP_DISK_TID), GetActorZ(SP_DISK_TID), TRUE))
 		return FALSE;
 	return TRUE;
 }
