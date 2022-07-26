@@ -74,22 +74,24 @@ script "checkpoint_hit" (void)
 
 	if(GetCvar("sp_ProtectActivator") == TRUE)
 	{
-	GiveInventory ("sp_PowerSaved", 1);
+		GiveInventory ("sp_PowerSaved", 1);
 	}
 
 	if (GameType() != GAME_SINGLE_PLAYER)
 	{
-	HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
-	SetHudSize(320,240,0);
-	HudMessageBold (s:"\c[Chlorine]",n:0,s:" just hit a checkpoint!"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING | HUDMSG_LOG, 880,"Chlorine", 160.0, 62.0, 1.0, 2.0);
-	SetHudSize(0, 0, FALSE);
-	AmbientSound("CHECK", 127);
+		HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
+		SetHudSize(320,240,0);
+		HudMessageBold (s:"\c[Chlorine]",n:0,s:" just hit a checkpoint!"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING | HUDMSG_LOG, 880,"Chlorine", 160.0, 62.0, 1.0, 2.0);
+		SetHudSize(0, 0, FALSE);
+		AmbientSound("SP_CHECK", 127);
 	}
 	else
 	{
-	AmbientSound("SAVED", 127);
-	Terminate;
+		AmbientSound("SP_SAVED", 127);
 	}
+
+	FadeTo(0, 0, 160,0.25, 0.0);
+	FadeTo(0, 0, 0, 0.0, 0.3);
 }
 
 script "sp_init_revive_all" (void)
@@ -121,9 +123,9 @@ script "iamlegend" (void)
 		 }
 }
 
-script "sp_getlocation"(void) NET
+script "sp_getlocation" (void) NET
 {
-LocalAmbientSound("SAVED", 127);
+LocalAmbientSound("SP_SAVED", 127);
 print(s:"X: ",f:GetActorX(0),s:"\nY: ",f:GetActorY(0),s:"\nZ: ",f:GetActorZ(0));
 Log(s:"PlaceCheckpoint(",f:GetActorX(0),s:",",f:GetActorY(0),s:",",f:GetActorZ(0),s:");");
 }

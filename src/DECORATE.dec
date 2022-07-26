@@ -1,7 +1,7 @@
 Actor sp_SaveDisk : CustomInventory 20027
 {
 //$Title Save Disk
-//$Category Essential
+//$Category Tools
 //$sprite SAVEA0
 //$Color 9
 //$NotAngled
@@ -11,7 +11,7 @@ Mass 1000
 Inventory.PickupMessage "\c[Chlorine]You've reached a Checkpoint."
 Inventory.PickupFlash "sp_FlashSpawner"
 Inventory.PickupSound ""
-+BRIGHT
++INVENTORY.NOSCREENFLASH
 +CANPASS
 +FLOATBOB
 +NOTDMATCH
@@ -21,6 +21,7 @@ Inventory.PickupSound ""
 +NOTIMEFREEZE
 +FIXMAPTHINGPOS
 +DONTGIB
++BRIGHT
 
 States
 	{
@@ -41,7 +42,7 @@ Actor sp_FlashSpawner : Actor
 +NOTIMEFREEZE
 +CANPASS
 -SOLID
-+NOBLOCKMAP
+-NOGRAVITY
 Height 0
 Radius 24
 States
@@ -62,7 +63,6 @@ Actor sp_PlayerSpawner : BlueParticleFountain
 {
 +NOTIMEFREEZE
 +CANPASS
-+NOBLOCKMAP
 -NOGRAVITY
 +NEVERRESPAWN
 +FIXMAPTHINGPOS
@@ -71,7 +71,7 @@ Actor sp_PlayerSpawner : BlueParticleFountain
 
 Actor sp_PowerSaved : PowerInvulnerable
 {
-inventory.icon "SAVEDISK"
+inventory.icon "SP_SAVEDISK"
 Powerup.Duration 53
 }
 
