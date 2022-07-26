@@ -11,11 +11,5 @@ Singleplayer Functionality
 Multiplayer Functionality
 
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/48725508/181096141-b7dbcefc-3854-4d1e-9376-e5919bcacec9.gif)
-
-Respawns from Checkpoint
-
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/48725508/181096869-0956f213-a007-4b39-bd0c-4367d7518a0c.gif)
-
-No Telefragging
-
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/48725508/181097754-1fdb7632-8268-4f54-a806-4c3908a3ccaf.gif)
