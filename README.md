@@ -9,7 +9,7 @@ It also solves the "running to evil" problem present in co-op. By updating the s
 
 **Features**
 * Zandronum and GZDoom Compatible! (Not ZDoom though)
-* Diffrent functionality depending on gamemode
+* Different functionality depending on gamemode
 * Uses an actor for it's position tracking so that it could be placed on moving sectors without any clips.
 * Still Saves in GZDoom Multiplayer.
 * Collision-Safe! It's unable to telefrag existing Players.
