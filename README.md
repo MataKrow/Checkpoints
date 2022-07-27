@@ -2,7 +2,7 @@
 
 ## **Overview**
 Checkpoints!<br />
-They autosave in singleplayer, sets spawn in multiplayer and resurrects everyone in surival!<br />
+They autosave in singleplayer, sets the spawn in multiplayer and resurrects everyone in surival!<br />
 It's more or less an alternative to that pesky unexpected scripted autosave, forcing an access to the HDD while buffering the game for half a second or more, even possibly saving while in a bad situation! This system hopes to give the player choice! <br />
 
 It also solves the "running to evil" problem present in co-op. By updating the spawn position to it when it's touched. Players can get right back into the action with little to no delay.
