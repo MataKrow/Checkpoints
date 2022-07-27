@@ -11,7 +11,7 @@ They Autosave in singleplayer, sets the spawnpoint in multiplayer and revives ev
 * Presets!
 
 **Preset System.**<br />
-The checkpoint system was only really meant as a rescource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this! Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more mapsets in the future and you can too, as the projects open-source.
+The checkpoint system was only really meant as a resource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this! Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more mapsets in the future and you can too, as the projects open-source.
 
 
 https://user-images.githubusercontent.com/48725508/181102157-218b9473-d99d-4323-8475-028628f2aa09.mp4
