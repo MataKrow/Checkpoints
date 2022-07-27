@@ -1,4 +1,4 @@
-# ![logo](https://user-images.githubusercontent.com/48725508/181228660-7de667f8-462c-452a-9449-21782fe46986.png)
+# ![logo](https://user-images.githubusercontent.com/48725508/181262857-0a05389a-d62f-4ac6-8635-812adbdd56e9.png)
 
 Checkpoints!<br />
 They Autosave in singleplayer, sets the spawnpoint in multiplayer and revives everyone in surival.<br />
