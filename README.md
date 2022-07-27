@@ -5,7 +5,7 @@ They Autosave in singleplayer, sets the spawnpoint in multiplayer and revives ev
 
 **Features**
 * Diffrent functionality depending on gamemode
-* Uses a placed actor so that it can be placed on moving sectors without clipping.
+* Uses an actor for it's position tracking so that it could be placed on moving sectors without any clips.
 * Collision-Safe! It's unable to telefrag existing Players.
 * Sprite Bridge Safe! (If you can find one...)
 * Presets!
