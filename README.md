@@ -2,6 +2,7 @@
 
 Checkpoints!<br />
 They Autosave in singleplayer, sets the spawnpoint in multiplayer and revives everyone in surival.
+It's also an alternitive to that pesky unexpected autosave, forcing an access to the HDD while buffering the game for half a second or more. Even possibly saving while in a bad situation! This system hopes to give the player choice!
 
 **Features**
 * Zandronum and GZDoom Compatible! (Not ZDoom though)
