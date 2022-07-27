@@ -4,10 +4,13 @@ Checkpoints!<br />
 They Autosave in singleplayer, sets the spawnpoint in multiplayer and revives everyone in surival.
 
 **Features**
+* Zandronum and GZDoom Compatible! (Not ZDoom though)
 * Diffrent functionality depending on gamemode
 * Uses an actor for it's position tracking so that it could be placed on moving sectors without any clips.
 * Collision-Safe! It's unable to telefrag existing Players.
 * Sprite Bridge Safe! (If you can find one...)
+* Fail-Safe! Holding zoom cancels you out of it's effects if the destination is undesirable
+* Warp-Safe! Still gives you respawn protection.
 * Presets!
 
 **Preset System.**<br />
