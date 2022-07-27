@@ -70,6 +70,15 @@ script "checkpoint_hit" (void)
 		GiveInventory ("sp_PowerSaved", 1);
 	}
 
+	// Saves the Game in GZDoom Multiplayer
+	if(GetPlayerAccountName(0) != 0)
+	{
+	AutoSave();
+	}
+
+	ScriptCall("sp_ZscriptAutoSave", "sp_AutoSave");
+
+
 	if (GameType() != GAME_SINGLE_PLAYER)
 	{
 		HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);

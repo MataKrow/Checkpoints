@@ -30,7 +30,6 @@ States
 		Stop
   	Pickup:
 		SAVE A 0 ACS_NamedExecute("checkpoint_hit", 0)
-		SAVE A 0 AutoSave
     	Stop
   	}
 
