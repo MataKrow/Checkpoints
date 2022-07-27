@@ -2,7 +2,7 @@
 
 Checkpoints!<br />
 They Autosave in singleplayer, sets the spawnpoint in multiplayer and revives everyone in surival.<br />
-It's an alternative to that pesky unexpected autosave, forcing an access to the HDD while buffering the game for half a second or more, even possibly saving while in a bad situation! This system hopes to give the player choice!
+It's more or less an alternative to that pesky unexpected scripted autosave, forcing an access to the HDD while buffering the game for half a second or more, even possibly saving while in a bad situation! This system hopes to give the player choice!
 It also solves the "Running to evil" problem present in co-op. By updating the spawn position when it's updated. Players can get right back into the action with no delay. (Unless there's someone on the fountain.)
 
 **Features**
