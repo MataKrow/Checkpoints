@@ -16,6 +16,9 @@ It also solves the "running to evil" problem present in co-op. By updating the s
 * Sprite Bridge Safe! (If you can find one...)
 * Fail-Safe! Holding zoom cancels you out of it's effects if the destination is undesirable
 * Warp-Safe! Still gives you respawn protection.
+* Mod-Safe! Designed to run with *anything*!
+* Comes with options for customizing.
+* Mapper Friendly! You only need to place the checkpoint object on the map to use the system.
 * Presets!
 
 **Preset System.**<br />
