@@ -73,7 +73,7 @@ Gravity 2.0
 
 Actor sp_PowerSaved : PowerInvulnerable
 {
-inventory.icon "SP_SAVEDISK"
+inventory.icon "STDISK"
 Powerup.Duration 53
 }
 
