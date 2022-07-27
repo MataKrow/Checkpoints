@@ -7,10 +7,6 @@ It's more or less an alternative to that pesky unexpected scripted autosave, for
 
 It also solves the "running to evil" problem present in co-op. By updating the spawn position when it's updated. Players can get right back into the action with no delay. (Unless there's someone on the fountain.)
 
-It also also solves that problem of **being dead** (In Doom). 
-When you die in surivival you're waiting to play again, but the only way to come back is if everyone dies or if the level changes.<br />
-The problem comes if you die with good players in a very long map. This system shoud solve that problem by reviving all dead players during a map getting idled people back into the action with no delay. (Unless you're a true spectator.)
-
 **Features**
 * Zandronum and GZDoom Compatible! (Not ZDoom though)
 * Diffrent functionality depending on gamemode
