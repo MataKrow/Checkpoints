@@ -27,6 +27,8 @@ The checkpoint system was only really meant as a resource for mappers, but the p
 ## Media
 And now some GIFS!
 
+
+https://user-images.githubusercontent.com/48725508/181340545-5d49ca8d-0bc4-4a17-885e-b52092b27ef8.mp4
 https://user-images.githubusercontent.com/48725508/181102157-218b9473-d99d-4323-8475-028628f2aa09.mp4
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/48725508/181095526-ac33a4d0-726f-4d6f-b84e-9a2cae57e9a4.gif)
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/48725508/181096141-b7dbcefc-3854-4d1e-9376-e5919bcacec9.gif)
