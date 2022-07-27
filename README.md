@@ -1,7 +1,7 @@
 # ![logo](https://user-images.githubusercontent.com/48725508/181228660-7de667f8-462c-452a-9449-21782fe46986.png)
 
 Checkpoints!<br />
-They Autosave in singleplayer,sets the spawnpoint in multiplayer and revives everyone in surival.
+They Autosave in singleplayer, sets the spawnpoint in multiplayer and revives everyone in surival.
 
 **Features**
 * Diffrent functionality depending on gamemode
