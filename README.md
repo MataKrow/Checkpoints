@@ -24,9 +24,6 @@ It also solves the "running to evil" problem present in co-op. By updating the s
 **Preset System.**<br />
 The checkpoint system was only really meant as a resource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this! Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more mapsets in the future and you can too, since project's open-source.
 
-Here's a list to know the presets planned
-- [ ] Ancient Aliens
-- [ ] TNT 2: Devilution
 
 And now some GIFS!
 
