@@ -1,12 +1,13 @@
-# ![logo](https://user-images.githubusercontent.com/48725508/181228660-7de667f8-462c-452a-9449-21782fe46986.png)
+# ![logo](https://user-images.githubusercontent.com/48725508/181269756-df1dfbbf-7cbf-48e9-9d6e-91c9b84635b3.png)
+
 
 Checkpoints!<br />
-They Autosave in singleplayer, sets the spawnpoint in multiplayer and revives everyone in surival.<br />
+They Autosave in singleplayer, set the respawnpoint in multiplayer and revives everyone in surival!<br />
 It's more or less an alternative to that pesky unexpected scripted autosave, forcing an access to the HDD while buffering the game for half a second or more, even possibly saving while in a bad situation! This system hopes to give the player choice! <br />
 
 It also solves the "running to evil" problem present in co-op. By updating the spawn position when it's updated. Players can get right back into the action with no delay. (Unless there's someone on the fountain.)
 
-It also also solves that problem of **being dead**. (In Doom)
+It also also solves that problem of **being dead** (In Doom). 
 When you die in surivival you're waiting to play again, but the only way to come back is if everyone dies or if the level changes.<br />
 The problem comes if you die with good players in a very long map. This system shoud solve that problem by reviving all dead players getting people back into the action with no delay. (Unless you're a true spectator.)
 
@@ -22,7 +23,7 @@ The problem comes if you die with good players in a very long map. This system s
 * Presets!
 
 **Preset System.**<br />
-The checkpoint system was only really meant as a resource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this! Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more mapsets in the future and you can too, as the projects open-source.
+The checkpoint system was only really meant as a resource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this! Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more mapsets in the future and you can too, since project's open-source.
 
 And now some GIFS!
 
