@@ -7,7 +7,7 @@ It's more or less an alternative to that pesky unexpected scripted autosave, for
 
 It also solves the "running to evil" problem present in co-op. By updating the spawn position to it when it's touched. Players can get right back into the action with little to no delay.
 
-**Features**
+## **Features**
 * Zandronum and GZDoom Compatible! (Not ZDoom though)
 * Different functionality depending on gamemode
 * Uses an actor for it's position tracking so that it could be placed on moving sectors without any clips.
