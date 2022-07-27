@@ -76,8 +76,7 @@ script "checkpoint_hit" (void)
 	AutoSave();
 	}
 
-	ScriptCall("sp_ZscriptAutoSave", "sp_AutoSave");
-
+	ScriptCall("sp_MultiplayerAutosave", "sp_ZscriptAutoSave");
 
 	if (GameType() != GAME_SINGLE_PLAYER)
 	{
