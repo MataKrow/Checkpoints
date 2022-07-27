@@ -1,6 +1,6 @@
 # ![logo](https://user-images.githubusercontent.com/48725508/181228660-7de667f8-462c-452a-9449-21782fe46986.png)
 
-Checkpoints!
+Checkpoints!<br />
 They Autosave in singleplayer,sets the spawnpoint in multiplayer and revives everyone in surival.
 
 Features
@@ -11,7 +11,7 @@ Features
 * Presets!
 
 **Preset System**
-The checkpoint system was only really meant as a rescource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this! Currently It's only has [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/).
+The checkpoint system was only really meant as a rescource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this! Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more maps in the futures.
 
 
 https://user-images.githubusercontent.com/48725508/181102157-218b9473-d99d-4323-8475-028628f2aa09.mp4
