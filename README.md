@@ -21,7 +21,7 @@ It also solves the "running to evil" problem present in co-op. By updating the s
 * Mapper Friendly! You only need to place the checkpoint object on the map to use the system.
 * Presets!
 
-**Preset System.**<br />
+## **Presets**<br />
 The checkpoint system was only really meant as a resource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this! Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more mapsets in the future and you can too, since project's open-source.
 
 
