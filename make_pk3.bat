@@ -1,5 +1,5 @@
  @echo off
- set ProjName=BUILD
+ set ProjName=Checkpoints
  echo Ready to Start.
 
  echo Step 1: Packing
