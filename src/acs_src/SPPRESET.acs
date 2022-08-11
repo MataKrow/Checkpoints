@@ -5,6 +5,18 @@ int levnum;
 
 //TODO: TNT 2: Devilution
 
+/*
+Some guidlines I set for myself while placing checkpoints.
+
+- Should not be near monster spawns
+- SaveDisk should be easy to spot
+- Far from the start point
+- Before memorable moments
+- In a lock-in battle
+- Position should be able to scan a in-progress battle by first sight
+- Position should be a place where the player can choose thier next action freely
+*/
+
 //////////////////////////////////////////////////////////////
 //						  TEMPLATE							//
 //////////////////////////////////////////////////////////////
