@@ -10,7 +10,7 @@
             "name": "GZDoom",
             "type": "PowerShell",
             "request": "launch",
-            "script": "${workspaceFolder}/test.bat",
+            "script": "${workspaceFolder}/.test.bat",
             "cwd": "${workspaceFolder}"
     }
 

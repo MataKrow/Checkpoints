@@ -1,5 +1,6 @@
 Actor sp_SaveDisk : CustomInventory 20027
 {
+Tag "Checkpoint"
 //$Title Save Disk
 //$Category Tools
 //$sprite SAVEA0
@@ -58,6 +59,7 @@ States
 
 Actor sp_PlayerSpawner : ParticleFountain
 {
+Tag "Fountain Spawner"
 Health 3 // Changes the Color...
 Gravity 2.0
 -NOBLOCKMAP
