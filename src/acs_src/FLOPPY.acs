@@ -31,11 +31,11 @@ if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("
 				HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
 				if (GetCvar("sp_ZCancel") == TRUE)
 				{
-				HudMessage(s:"\c[Chlorine]            Waiting to warp...\n Hold the Zoom Key to cancel."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+				HudMessage(l:"sp_CheckWait",s:"\n ",l:"sp_CheckWaitZoom"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
 				}
 				else
 				{
-				HudMessage(s:"\c[Chlorine]            Waiting to warp..."; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+				HudMessage(l:"sp_CheckWait"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
 				}
 				delay(35);
 			}
@@ -82,7 +82,7 @@ script "checkpoint_hit" (void)
 	{
 		HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
 		SetHudSize(320,240,FALSE);
-		HudMessageBold (s:"\c[Chlorine]",n:0,s:" just hit a checkpoint!"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING | HUDMSG_LOG, 880,"Chlorine", 160.0, 62.0, 1.0, 2.0);
+		HudMessageBold (s:"\c[Chlorine]",n:0,s:" ",l:"sp_CheckHit"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING | HUDMSG_LOG, 880,"Chlorine", 160.0, 62.0, 1.0, 2.0);
 		SetHudSize(0, 0,FALSE);
 		AmbientSound("SP_CHECK", 127);
 	}

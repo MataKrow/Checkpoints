@@ -38,7 +38,7 @@ States
 
 Actor sp_FlashSpawner : Actor
 {
--NOTIMEFREEZE
++NOTIMEFREEZE
 +CANPASS
 -SOLID
 -NOGRAVITY
@@ -51,7 +51,7 @@ States
 		TNT1 A 0
 		TNT1 A 0 ACS_NamedExecute("sp_init_revive_all", 0)
 		TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
-		TNT1 A 1 A_SpawnItemEx ("sp_PlayerSpawner",0,0,0,0,0,-30,0,SXF_ABSOLUTEANGLE,0,32035)
+		TNT1 A 1 A_SpawnItemEx ("sp_PlayerSpawner",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE,0,32035)
 		TNT1 A 1
 		Stop
   	}
