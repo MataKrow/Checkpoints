@@ -1,4 +1,4 @@
-[enu default]
+[en default]
 
 //Menudef
 sp_TitleOptions = "\c[Chlorine]Checkpoint Options";
@@ -41,7 +41,13 @@ sp_HeaderPWADS = "\c[Chlorine]PWADS";
 sp_HeaderUserDef = "\c[Chlorine]USER-DEFINED";
 
 //ACS
-sp_CheckHit = "\c[Chlorine]just hit a checkpoint!";
+sp_CheckHit = "\c[Chlorine]just hit a Checkpoint!";
+
+//Extras
+$ifgame(heretic) sp_CheckHit = "\c[Chlorine]hath cast a Checkpoint!";
+$ifgame(hexen) sp_CheckHit = "\c[Chlorine]hath cast a Checkpoint!";
+$ifgame(chex)sp_CheckHit = "\c[Chlorine]just hit a Chexpoint!";
+
 sp_CheckWait = "\c[Chlorine]            Waiting to warp...";
 sp_CheckWaitZoom = "\c[Chlorine]Hold the Zoom Key to cancel.";
 

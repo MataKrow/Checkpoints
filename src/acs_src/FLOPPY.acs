@@ -97,9 +97,9 @@ script "checkpoint_hit" (void)
 
 script "sp_init_revive_all" (void)
 {
-	if (GameType() != GAME_SINGLE_PLAYER)
+	if (GameType() != GAME_SINGLE_PLAYER && GetPlayerAccountName(0) != 0)
 	{
-	ACS_NamedExecute("sp_revive_all", 0,GetCvar("sp_ResDelay"));
+		ACS_NamedExecute("sp_revive_all", 0,GetCvar("sp_ResDelay"));
 	}
 }
 
@@ -108,12 +108,12 @@ script "sp_revive_all" (int time)
 {
 	delay(35);
 	int i = 0;
-		 while (i<SP_MAXPLAYERS)
-		 {
-			SetDeadSpectator(i,FALSE);
-			i++;
-			delay(time);
-		 }
+	while (i<SP_MAXPLAYERS)
+	{
+		SetDeadSpectator(i,FALSE);
+		i++;
+		delay(time);
+	}
 }
 
 script "iamlegend" (void)
