@@ -20,15 +20,13 @@ Sprite Edit:           None
 Idea Base:             Exl's Save Disk System / BioHazard's Checkpoint system.
 
 Description:
-Autosaves in singleplayer, moves spawn in multiplayer and resurrects everyone in surival.
-Solves the "running to evil" problem present in co-op.
-By updating the spawn position to it when it's touched.
-Players can get right back into the action with little to no delay.
+(Zandronum-Compatible)
+When a Save Disk is touched, the game will save and the player will respawn in that location when they die.
+Additionally, it resurrects all players in surival.
 
 
 Sprite:
-(.\Assets\Preview.png)
-Put a preview sprite of the powerup or item. Use an image upload site like ImageShack or TinyPic.
+https://imgur.com/pqzhX7J
 
 Download Link:
-Either upload to a site like DropBox or Google Drive , or just attach it to your post. Please choose one that shouldn't expire, because it might expire before we can add it.
+https://github.com/Matacrat/Checkpoints/releases/download/Releases/Checkpoints_667.pk3
