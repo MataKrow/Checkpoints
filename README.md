@@ -1,7 +1,9 @@
 # ![logo](https://user-images.githubusercontent.com/48725508/181269756-df1dfbbf-7cbf-48e9-9d6e-91c9b84635b3.png)
 
+
 ### Forum Thread
 https://forum.zdoom.org/viewtopic.php?f=43&t=76051
+<br /> <br /> <img alt="GitHub" src="https://img.shields.io/github/license/Matacrat/Checkpoints">  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/downloads/Matacrat/Checkpoints/latest/total">
 
 ## **Overview**
 Checkpoints!<br />
@@ -37,5 +39,3 @@ https://user-images.githubusercontent.com/48725508/181102157-218b9473-d99d-4323-
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/48725508/181096141-b7dbcefc-3854-4d1e-9376-e5919bcacec9.gif)
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/48725508/181096869-0956f213-a007-4b39-bd0c-4367d7518a0c.gif)
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/48725508/181097754-1fdb7632-8268-4f54-a806-4c3908a3ccaf.gif)
-
-<img alt="GitHub" src="https://img.shields.io/github/license/Matacrat/Checkpoints"> <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/downloads/Matacrat/Checkpoints/latest/total">
