@@ -2,7 +2,7 @@ Actor sp_SaveDisk : CustomInventory 32027
 {
 	Tag "Save Disk"
 	//$Title Save Disk
-	//$Category Tools
+	//$Category Powerups
 	//$Sprite SAVEA0
 	//$Color 9
 	//$NotAngled
@@ -25,14 +25,14 @@ Actor sp_SaveDisk : CustomInventory 32027
 	+BRIGHT
 
 	States
-		{
-	  		Spawn:
-				SAVE A -1
-				Stop
-	  		Pickup:
-				SAVE A 0 ACS_NamedExecute("checkpoint_hit", 0)
-	    		Stop
-	  	}
+	{
+		Spawn:
+			SAVE A -1
+			Stop
+		Pickup:
+			SAVE A 0 ACS_NamedExecute("checkpoint_hit", 0)
+			Stop
+	}
 
 }
 
@@ -46,15 +46,15 @@ Actor sp_FlashSpawner : Actor
 	Radius 24
 	Gravity 14.0
 	States
-	  	{
-	  		Spawn:
-				TNT1 A 0
-				TNT1 A 0 ACS_NamedExecute("sp_init_revive_all", 0)
-				TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
-				TNT1 A 1 A_SpawnItemEx ("sp_PlayerSpawner",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE,0,32035)
-				TNT1 A 1
-				Stop
-	  	}
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 ACS_NamedExecute("sp_init_revive_all", 0)
+			TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
+			TNT1 A 1 A_SpawnItemEx ("sp_PlayerSpawner",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE,0,32035)
+			TNT1 A 1
+			Stop
+	}
 }
 
 Actor sp_PlayerSpawner : ParticleFountain
@@ -80,6 +80,6 @@ Actor sp_PowerSaved : PowerInvulnerable
 
 Actor sp_PowerLoad : sp_PowerSaved
 {
-	inventory.icon "SP_RESCON"
+	inventory.icon "SP_RICON"
 	Powerup.Duration 105
 }

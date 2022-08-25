@@ -38,9 +38,9 @@ if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("
 			SetHudSize(0, 0,TRUE);
 			if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 				{
-					if(GetCvar("sp_ProtectActivator") == TRUE)
+					if(GetCvar("sp_ProtectSpawned") == TRUE)
 					{
-						GiveInventory ("sp_PowerLoad", 1);
+						GiveInventory("sp_PowerLoad", 1);
 					}
 					FadeTo(0, 0, 160,0.40, 0.0);
 					FadeTo(0, 0, 0, 0.0, 0.3);

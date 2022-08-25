@@ -7,6 +7,8 @@
 + More wild editor number
 + Unique Text Color
 + Hud scale fix
++ Misc Fixes and Improvements
++ Updated the localization files
 - Removed Kinsie's Test map from Builds
 
 TODO: Build 3 versions

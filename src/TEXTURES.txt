@@ -9,13 +9,11 @@ Sprite "SAVEA0", 16, 15
 
 Graphic "SP_ICON", 16, 15
 {
-	Offset 8, 48
 	Patch "SP_FLOP", 0, 0
 }
 
-Graphic "SP_RESCON", 16, 15
+Graphic "SP_RICON", 16, 15
 {
-	Offset 8, 48
 	Patch "SP_FLOP", 0, 0
 	{
 		Translation "0:255=%[0.00,0.00,0.00]:[2.00,2.00,2.00]"
