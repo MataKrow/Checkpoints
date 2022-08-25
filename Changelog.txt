@@ -1,0 +1,16 @@
+??/??/????
++ M8f's Target Spy Support
++ All strings now use a LANGUAGE lump
++ Checkpoints now uses SP_FLOP as it's only graphic
++ Fixed an issue where Checkpoints gives players Spawn Protection when spawned and not when warped
++ Realm 667 Compliant
++ More wild editor number
++ Unique Text Color
++ Hud scale fix
+- Removed Kinsie's Test map from Builds
+
+TODO: Build 3 versions
+PK3 - Standalone
+PK3 - REALM667 Version
+Wad - Resource only
+

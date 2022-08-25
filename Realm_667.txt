@@ -1,0 +1,34 @@
+[SUBMISSION] Save Disk
+
+Information:
+Name:                  Save Disk
+Type:                  Checkpoint/Powerup
+Palette:               Doom
+Summon:                sp_SaveDisk
+Use type:              Instant
+Duration:              1.5 to 3 Seconds.
+Brightmaps:            No
+Actor modification:    No
+ACS:                   Yes
+
+Credits:
+Code:                  Matacrat / Korshun
+GLDefs:                Matacrat
+Sounds:                EarthBound's Healing Sound / Tomb Raider's Secret Sound
+Sprites:               Save Disk Graphic (STDISK) from Id Software
+Sprite Edit:           None
+Idea Base:             Exl's Save Disk System / BioHazard's Checkpoint system.
+
+Description:
+Autosaves in singleplayer, moves spawn in multiplayer and resurrects everyone in surival.
+Solves the "running to evil" problem present in co-op.
+By updating the spawn position to it when it's touched.
+Players can get right back into the action with little to no delay.
+
+
+Sprite:
+(.\Assets\Preview.png)
+Put a preview sprite of the powerup or item. Use an image upload site like ImageShack or TinyPic.
+
+Download Link:
+Either upload to a site like DropBox or Google Drive , or just attach it to your post. Please choose one that shouldn't expire, because it might expire before we can add it.

@@ -14,28 +14,28 @@ script "checkpoint_warp_connected" ENTER
 	ACS_NamedExecuteAlways("checkpoint_warp",0);
 }
 
-//Warps player to checkpoint set and Gives sp_PowerLoad to player
+// Warps player to checkpoint set and Gives sp_PowerLoad to player
 script "checkpoint_warp" RESPAWN
 {
 if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 	{
 		IF (sp_ActorExists(SP_DISK_TID))
 		{
-			SetHudSize(320,240,FALSE);
+			SetHudSize(320,240,TRUE);
 			until (sp_PlayerKeyDown(-1, BT_ZOOM) && !GetCvar("sp_ZCancel") || sp_RoomForWarp())
 				{
 					HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
 					if (GetCvar("sp_ZCancel") == TRUE)
 					{
-						HudMessage(l:"sp_CheckWait",s:"\n ",l:"sp_CheckWaitZoom"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+						HudMessage(l:"sp_CheckWait",s:"\n ",l:"sp_CheckWaitZoom"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"sp_Chlorine", 160.0, 190.0, 1.0, 2.0);
 					}
 					else
 					{
-						HudMessage(l:"sp_CheckWait"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"Chlorine", 160.0, 190.0, 1.0, 2.0);
+						HudMessage(l:"sp_CheckWait"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"sp_Chlorine", 160.0, 190.0, 1.0, 2.0);
 					}
 					delay(35);
 				}
-			SetHudSize(0, 0,FALSE);
+			SetHudSize(0, 0,TRUE);
 			if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 				{
 					if(GetCvar("sp_ProtectActivator") == TRUE)
@@ -70,20 +70,21 @@ script "checkpoint_hit" (void)
 		GiveInventory ("sp_PowerSaved", 1);
 	}
 
-	// Saves the Game in GZDoom Multiplayer
+
 	if(GetPlayerAccountName(0) != 0)
 	{
 		AutoSave();
 	}
 
+	// Saves the Game in GZDoom Multiplayer
 	ScriptCall("sp_MultiplayerAutosave", "sp_ZscriptAutoSave");
 
 	if (GameType() != GAME_SINGLE_PLAYER)
 	{
 		HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
-		SetHudSize(320,240,FALSE);
-		HudMessageBold (s:"\c[Chlorine]",n:0,s:" ",l:"sp_CheckHit"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING | HUDMSG_LOG, 880,"Chlorine", 160.0, 62.0, 1.0, 2.0);
-		SetHudSize(0, 0,FALSE);
+		SetHudSize(320,240,TRUE);
+		HudMessageBold (s:"\c[sp_Chlorine]",n:0,s:" ",l:"sp_CheckHit"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING | HUDMSG_LOG, 880,"sp_Chlorine", 160.0, 62.0, 1.0, 2.0);
+		SetHudSize(0, 0,TRUE);
 		AmbientSound("SP_CHECK", 127);
 	}
 	else
@@ -116,7 +117,8 @@ script "sp_revive_all" (int time)
 	}
 }
 
-script "iamlegend" (void)
+//Kills all players. Used for testing.
+script "sp_iamlegend" (void)
 {
 	int i = 1;
 	while (i<SP_MAXPLAYERS)
@@ -127,6 +129,7 @@ script "iamlegend" (void)
 	}
 }
 
+//Logs your coordinates into a function ready for preset placing
 script "sp_getlocation" (void) NET
 {
 	LocalAmbientSound("SP_SAVED", 127);

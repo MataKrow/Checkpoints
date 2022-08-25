@@ -1,16 +1,16 @@
 [en default]
 
 //Menudef
-sp_TitleOptions = "\c[Chlorine]Checkpoint Options";
-sp_HeaderAuthor = "\c[Chlorine]Checkpoints v1.0 by Matacrat";
+sp_TitleOptions = "\c[sp_Chlorine]Checkpoint Options";
+sp_HeaderAuthor = "\c[sp_Chlorine]Checkpoints v1.0 by Matacrat";
 
-sp_HeaderProtect = "\c[Chlorine]Spawn Protection";
+sp_HeaderProtect = "\c[sp_Chlorine]Spawn Protection";
 
 sp_OptionSafeCaller = "Given to activator";
 sp_OptionSafeRes = "Given to the resurrected";
 
 
-sp_HeaderRespawn = "\c[Chlorine]Respawning Options";
+sp_HeaderRespawn = "\c[sp_Chlorine]Respawning Options";
 
 sp_OptionZCancel = "Zoom Cancelling";
 
@@ -22,36 +22,36 @@ sp_OptionSpawnVelZMax = "Maximum Velocity";
 sp_OptionSpawnVelXY = "Horizontal Spawn Velocity";
 
 
-sp_HeaderZandronum = "\c[Chlorine]Zandronum Exclusive Options";
+sp_HeaderZandronum = "\c[sp_Chlorine]Zandronum Exclusive Options";
 
 sp_OptionResDelay = "Survival Resurrect frequency";
 
 
-sp_TitlePreset = "\c[Chlorine]Checkpoint Presets";
+sp_TitlePreset = "\c[sp_Chlorine]Checkpoint Presets";
 
 
 sp_OptionReset = "\c[Orange]Reset to defaults";
 
 
 
-sp_HeaderIWADS = "\c[Chlorine]IWADS";
+sp_HeaderIWADS = "\c[sp_Chlorine]IWADS";
 
-sp_HeaderPWADS = "\c[Chlorine]PWADS";
+sp_HeaderPWADS = "\c[sp_Chlorine]PWADS";
 
-sp_HeaderUserDef = "\c[Chlorine]USER-DEFINED";
+sp_HeaderUserDef = "\c[sp_Chlorine]USER-DEFINED";
 
 //ACS
-sp_CheckHit = "\c[Chlorine]just hit a Checkpoint!";
+sp_CheckHit = "\c[sp_Chlorine]just hit a Checkpoint!";
 
 //Extras
-$ifgame(heretic) sp_CheckHit = "\c[Chlorine]hath cast a Checkpoint!";
-$ifgame(hexen) sp_CheckHit = "\c[Chlorine]hath cast a Checkpoint!";
-$ifgame(chex)sp_CheckHit = "\c[Chlorine]just hit a Chexpoint!";
+$ifgame(heretic) sp_CheckHit = "\c[sp_Chlorine]hath cast a Checkpoint!";
+$ifgame(hexen) sp_CheckHit = "\c[sp_Chlorine]hath cast a Checkpoint!";
+$ifgame(chex)sp_CheckHit = "\c[sp_Chlorine]just hit a Chexpoint!";
 
-sp_CheckWait = "\c[Chlorine]            Waiting to warp...";
-sp_CheckWaitZoom = "\c[Chlorine]Hold the Zoom Key to cancel.";
+sp_CheckWait = "\c[sp_Chlorine]            Waiting to warp...";
+sp_CheckWaitZoom = "\c[sp_Chlorine]Hold the Zoom Key to cancel.";
 
 //Decorate
-sp_CheckHitYou = "\c[Chlorine]You've reached a Checkpoint.";
+sp_CheckHitYou = "\c[sp_Chlorine]You've reached a Checkpoint.";
 
 

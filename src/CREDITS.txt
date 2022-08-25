@@ -1,0 +1,6 @@
+Code:           Matacrat / Korshun
+GLDefs:         Matacrat
+Sounds:         EarthBound's Healing Sound and Tomb Raider's Secret Sound
+Sprites:        Save Disk Graphic (STDISK) from Id Software
+Sprite Edit:    None
+Idea Base:      Exl's Save Disk System and BioHazard's Checkpoint system.
