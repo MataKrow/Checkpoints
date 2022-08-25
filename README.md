@@ -1,7 +1,9 @@
 # ![logo](https://user-images.githubusercontent.com/48725508/181269756-df1dfbbf-7cbf-48e9-9d6e-91c9b84635b3.png)
 
-### Forum Threads
+
+### Forum Thread
 https://forum.zdoom.org/viewtopic.php?f=43&t=76051
+<br /> <br /> <img alt="GitHub" src="https://img.shields.io/github/license/Matacrat/Checkpoints">  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/downloads/Matacrat/Checkpoints/latest/total">
 
 ## **Overview**
 Checkpoints!<br />
