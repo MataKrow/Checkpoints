@@ -1,5 +1,8 @@
 # ![logo](https://user-images.githubusercontent.com/48725508/181269756-df1dfbbf-7cbf-48e9-9d6e-91c9b84635b3.png)
 
+### Forum Threads
+https://forum.zdoom.org/viewtopic.php?f=43&t=76051
+
 ## **Overview**
 Checkpoints!<br />
 They autosave in singleplayer, sets the spawn in multiplayer and resurrects everyone in surival!<br />
