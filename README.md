@@ -37,5 +37,6 @@ https://user-images.githubusercontent.com/48725508/186764901-af983d60-ab26-46fa-
 
 https://user-images.githubusercontent.com/48725508/186764933-498834f6-e346-41be-8060-f2a78ca80550.mp4
 
-
+<br />Showcases the Option Menu.
+![image](https://user-images.githubusercontent.com/48725508/186786800-841658e8-3202-45f6-86a5-8ea1ec15ca10.png)
 
