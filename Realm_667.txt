@@ -2,7 +2,7 @@
 
 Information:
 Name:                  Save Disk
-Type:                  Checkpoint/Powerup
+Type:                  Checkpoint / Invulnerability
 Palette:               Doom
 Summon:                sp_SaveDisk
 Use type:              Instant
