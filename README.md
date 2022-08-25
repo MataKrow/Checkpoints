@@ -26,7 +26,7 @@ It also solves the "Running To Evil" problem present in co-op. Players can get r
 * Presets.
 
 ## **Presets**<br />
-The checkpoint system was primarilly designed as a resource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this.  Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more mapsets in the future and you can too, since project's open-source.
+The checkpoint system was primarilly designed as a resource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps. So I made this. A mistake I've made when first releasing this was to place this in the "Gameplay Mods" category on zdoom forums. With presets, It is a gameplay mod, but it's not the main focus. I really care about polishing this system more and more and making presets *surprisingly* is real draining for me. Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more mapsets in the future at a snail's pace.
 
 ## Media
 
