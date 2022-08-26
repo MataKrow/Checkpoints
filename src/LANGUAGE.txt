@@ -33,10 +33,7 @@ sp_TitlePreset = "\c[sp_Chlorine]Checkpoint Presets";
 sp_OptionReset = "\c[Orange]Reset to defaults";
 
 
-
-sp_HeaderIWADS = "\c[sp_Chlorine]IWADS";
-
-sp_HeaderPWADS = "\c[sp_Chlorine]PWADS";
+sp_HeaderPreset = "\c[sp_Chlorine]Presets";
 
 sp_HeaderUserDef = "\c[sp_Chlorine]USER-DEFINED";
 

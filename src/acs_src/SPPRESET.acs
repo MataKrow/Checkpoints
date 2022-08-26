@@ -3,6 +3,9 @@
 
 int levnum;
 
+//////////////////////////////////////////////////////////////
+//						  TEMPLATE							//
+//////////////////////////////////////////////////////////////
 /*
 Some guidlines I set for myself while placing checkpoints.
 
@@ -13,986 +16,119 @@ Some guidlines I set for myself while placing checkpoints.
 - In a lock-in battle
 - Position should be able to scan a in-progress battle by first sight
 - Position should be a place where the player can choose thier next action freely
+- Start distanced One way areas connected to the exit.
 */
-
-//////////////////////////////////////////////////////////////
-//						  TEMPLATE							//
-//////////////////////////////////////////////////////////////
-
-script "Check_Points_User_Defined" OPEN
+script "sp_Presets_User_Defined" OPEN
 {
-	switch (GetCvar("sp_Presets")) //Reads from the sp_Presets cvar.
+	/////////////////////////////////////////////////////////////////////////	TEMPLATE
+	switch (GetCvar("sp_Presets")) 												//Reads from the sp_Presets cvar.
 	{
-		case 1000: //Sets a value the cvar can draw from
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM); //Gets the levelnums from the mapinfo
-		switch (levnum) //switch statement
-		{
-		case 1: //MAP01
-		Log(s:"\c[sp_Chlorine]USER-DEFINED checkpoints loaded."); //Message to tell the player that checkpoints have loaded.
-		PlaceCheckpoint(0.0,0.0,0.0); // Places the checkpoint by values XYZ
-		PlaceCheckpoint(0.0,0.0,0.0); // Places the checkpoint by values XYZ
-		break; //Ends script for map 01
-
-		case 2: //MAP02
-		PlaceCheckpoint(0.0,0.0,0.0); // Places the checkpoint by values XYZ
-		break; //Ends script for map 02
-		}
+		case 1000:																//Sets a value the cvar can draw from
+			levnum = GetLevelInfo(LEVELINFO_LEVELNUM);							//Gets the levelnums from the mapinfo
+			switch (levnum)														//switch statement
+			{
+				case 1: 														//MAP01
+					Log(s:"\c[sp_Chlorine]USER-DEFINED checkpoints loaded."); 	//Message to tell the player that checkpoints have loaded.
+					PlaceCheckpoint(0.0,0.0,0.0); 								// Places the checkpoint by values XYZ
+					break;														//Ends script for map 01
+				case 2:															//MAP02
+					PlaceCheckpoint(0.0,0.0,0.0);								// Places the checkpoint by values XYZ
+					break;														//Ends script for map 02
+				default:
+				break;
+			}
 	}
 }
 
 //////////////////////////////////////////////////////////////
-//						PWAD CHECKPOINTS					//
+//						PRESETS								//
 //////////////////////////////////////////////////////////////
 
-script "Check_Points_PWAD" OPEN
+script "SP_Presets" OPEN
 {
 	switch (GetCvar("sp_Presets"))
 	{
-	//////////////////////////////////////////////////////////////// Ancient Aliens
-	case 201: //Possibly a problem in 20XX
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
-		switch (levnum)
-		{
-		case 1: 	//MAP01
-		Log(s:"Ancient Aliens checkpoints loaded.");
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 2:		//MAP02
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 3:		//MAP03
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 4:		//MAP04
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 5:		//MAP05
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 6:		//MAP06
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 7:		//MAP07
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 8:		//MAP08
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 9:		//MAP09
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 10:	//MAP10
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 11:	//MAP11
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 12:	//MAP12
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 13:	//MAP13
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 14:	//MAP14
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 15:	//MAP15
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 16:	//MAP16
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 17:	//MAP17
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 18:	//MAP18
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 19:	//MAP19
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 20:	//MAP20
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 21:	//MAP21
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 22:	//MAP22
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 23:	//MAP23
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 24:	//MAP24
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 25:	//MAP25
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 26:	//MAP26
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 27:	//MAP27
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 28:	//MAP28
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 29:	//MAP29
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 30:	//MAP30
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 31:	//MAP31
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 32:	//MAP32
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		default:
-		break;
-		}
-		break;
-
-	//////////////////////////////////////////////////////////////// AUGER ; ZENITH
-	case 202: //Possibly a problem in 20XX
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
-		switch (levnum)
-		{
-		case 1: 	//MAP01
-		Log(s:"\c[sp_Chlorine]AUGER; ZENITH checkpoints loaded.");
-		PlaceCheckpoint(1640.57,609.531,88);
-		break;
-		case 5:		//MAP05
-		PlaceCheckpoint(185.978,2325.91,768);
-		break;
-		case 6:		//MAP06
-		PlaceCheckpoint(-2061.93,-5120.59,-648);
-		break;
-		case 7:		//MAP07
-		PlaceCheckpoint(3833.4,1089.31,329);
-		break;
-		case 10:	//MAP10
-		PlaceCheckpoint(-6977.98,-2171.73,340);
-		PlaceCheckpoint(-6699.04,362.849,128);
-		break;
-		case 11:	//MAP11
-		PlaceCheckpoint(4244.62,-1907.33,256);
-		break;
-		case 12:	//MAP12
-		PlaceCheckpoint(-8065.75,-31807.6,64);
-		break;
-		case 13:	//MAP13
-		PlaceCheckpoint(1472.71,-1632.96,-704);
-		break;
-		case 14:	//MAP14
-		PlaceCheckpoint(-4025.61,2724.68,48);
-		break;
-		case 15:	//MAP15
-		PlaceCheckpoint(-2049.39,2479.77,24);
-		break;
-		case 16:	//MAP16
-		PlaceCheckpoint(4866.51,1422.75,-412.435);
-		PlaceCheckpoint(3256.35,-1782.55,-200);
-		break;
-		case 17: //MAP17
-		PlaceCheckpoint(1813.92,1757.32,104);
-		PlaceCheckpoint(115.662,-100.077,176);
-		break;
-		case 18:	//MAP18
-		PlaceCheckpoint(-480.616,-379.459,44);
-		PlaceCheckpoint(-980.97,591.432,144);
-		break;
-		case 19:	//MAP19
-		PlaceCheckpoint(351.269,979.555,0);
-		break;
-		case 20:	//MAP20
-		PlaceCheckpoint(3338.55,296.999,199.007);
-		break;
-		case 21:	//MAP21
-		PlaceCheckpoint(-516.612,4169.93,56);
-		break;
-		default:
-		break;
-		}
-		break;
-	break;
-	}
-}
-
-//////////////////////////////////////////////////////////////
-//						IWAD CHECKPOINTS					//
-//////////////////////////////////////////////////////////////
-script "Check_Points_IWAD" OPEN
-{
-	switch (GetCvar("sp_Presets"))
-	{
-
-	//////////////////////////////////////////////////////////////// NOTHING
-	case 0:
-	break;
-
-	//////////////////////////////////////////////////////////////// The Ultimate DOOM
-	case 1:
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
-		switch (levnum)
-		{
-		case 1: 	//MAP01
-		Log(s:"\c[sp_Chlorine]The Ultimate DOOM checkpoints loaded.");
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 2:		//MAP02
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 3:		//MAP03
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 4:		//MAP04
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 5:		//MAP05
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 6:		//MAP06
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 7:		//MAP07
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 8:		//MAP08
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 9:		//MAP09
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 10:	//MAP10
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 11:	//MAP11
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 12:	//MAP12
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 13:	//MAP13
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 14:	//MAP14
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 15:	//MAP15
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 16:	//MAP16
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 17:	//MAP17
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 18:	//MAP18
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 19:	//MAP19
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 20:	//MAP20
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 21:	//MAP21
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 22:	//MAP22
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 23:	//MAP23
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 24:	//MAP24
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 25:	//MAP25
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 26:	//MAP26
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 27:	//MAP27
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 28:	//MAP28
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 29:	//MAP29
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 30:	//MAP30
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 31:	//MAP31
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 32:	//MAP32
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		default:
-		break;
-		}
-	break;
-
-	//////////////////////////////////////////////////////////////// DOOM 2: Hell on Earth
-	case 2:
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
-		switch (levnum)
-		{
-		case 1:		 //MAP01
-		Log(s:"\c[sp_Chlorine]DOOM 2: Hell on Earth checkpoints loaded.");
-		PlaceCheckpoint(661.0,805.0,56.0);
-		break;
-		case 2:		//MAP02
-		PlaceCheckpoint(548.0,1745.0,-24.0);
-		break;
-		case 3:		//MAP03
-		PlaceCheckpoint(2722.0,2941.0,40.0);
-		break;
-		case 4:		//MAP04
-		PlaceCheckpoint(-127.0,1763.0,0.0);
-		break;
-		case 5:		//MAP05
-		PlaceCheckpoint(2065.0,69.0,160.0);
-		break;
-		case 6:		//MAP06
-		PlaceCheckpoint(1196.81,1341.54,184.0);
-		break;
-		case 7:		//MAP07
-		PlaceCheckpoint(-1595.92,661.178,8.0);
-		break;
-		case 8:		//MAP08
-		PlaceCheckpoint(1733.14,2968.41,0.0);
-		break;
-		case 9:		//MAP09
-		PlaceCheckpoint(-1912.89,1205.74,-136);
-		break;
-		case 10:	//MAP10
-		PlaceCheckpoint(-197.565,-571.381,0);
-		break;
-		case 11:	//MAP11
-		PlaceCheckpoint(415.765,1382.83,144);
-		break;
-		case 12:	//MAP12
-		PlaceCheckpoint(-125.286,2018.38,40);
-		break;
-		case 13:	//MAP13
-		PlaceCheckpoint(1448.96,-3072.33,16);
-		break;
-		case 14:	//MAP14
-		PlaceCheckpoint(469.862,-247.685,105.115);
-		break;
-		case 15:	//MAP15
-		PlaceCheckpoint(70.3619,-2138.31,384);
-		break;
-		case 16:	//MAP16
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 17:	//MAP17
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 18:	//MAP18
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 19:	//MAP19
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 20:	//MAP20
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 21:	//MAP21
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 22:	//MAP22
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 23:	//MAP23
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 24:	//MAP24
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 25:	//MAP25
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 26:	//MAP26
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 27:	//MAP27
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 28:	//MAP28
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 29:	//MAP29
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 30:	//MAP30
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 31:	//MAP31
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 32:	//MAP32
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		default:
-		break;
-		}
-	break;
-
-	//////////////////////////////////////////////////////////////// TNT: Evilution
-	case 3:
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
-		switch (levnum)
-		{
-		case 1:		 //MAP01
-		Log(s:"\c[sp_Chlorine]TNT: Evilution checkpoints loaded.");
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 2:		//MAP02
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 3:		//MAP03
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 4:		//MAP04
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 5:		//MAP05
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 6:		//MAP06
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 7:		//MAP07
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 8:		//MAP08
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 9:		//MAP09
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 10:	//MAP10
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 11:	//MAP11
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 12:	//MAP12
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 13:	//MAP13
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 14:	//MAP14
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 15:	//MAP15
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 16:	//MAP16
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 17:	//MAP17
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 18:	//MAP18
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 19:	//MAP19
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 20:	//MAP20
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 21:	//MAP21
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 22:	//MAP22
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 23:	//MAP23
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 24:	//MAP24
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 25:	//MAP25
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 26:	//MAP26
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 27:	//MAP27
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 28:	//MAP28
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 29:	//MAP29
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 30:	//MAP30
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 31:	//MAP31
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 32:	//MAP32
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		default:
-		break;
-		}
-	break;
-
-	//////////////////////////////////////////////////////////////// The Plutonia Experiment
-	case 4:
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
-		switch (levnum)
-		{
-		case 1: //MAP01
-		Log(s:"\c[sp_Chlorine]The Plutonia Experiment checkpoints loaded.");
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 2:		//MAP02
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 3:		//MAP03
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 4:		//MAP04
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 5:		//MAP05
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 6:		//MAP06
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 7:		//MAP07
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 8:		//MAP08
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 9:		//MAP09
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 10:	//MAP10
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 11:	//MAP11
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 12:	//MAP12
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 13:	//MAP13
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 14:	//MAP14
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 15:	//MAP15
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 16:	//MAP16
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 17:	//MAP17
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 18:	//MAP18
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 19:	//MAP19
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 20:	//MAP20
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 21:	//MAP21
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 22:	//MAP22
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 23:	//MAP23
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 24:	//MAP24
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 25:	//MAP25
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 26:	//MAP26
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 27:	//MAP27
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 28:	//MAP28
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 29:	//MAP29
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 30:	//MAP30
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 31:	//MAP31
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 32:	//MAP32
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		default:
-		break;
-		}
-		break;
-
-	//////////////////////////////////////////////////////////////// Freedoom: Phase 1
-	case 5:
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
-		switch (levnum)
-		{
-		case 1: //MAP01
-		Log(s:"\c[sp_Chlorine]Freedoom: Phase 1 checkpoints loaded.");
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 2:		//MAP02
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 3:		//MAP03
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 4:		//MAP04
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 5:		//MAP05
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 6:		//MAP06
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 7:		//MAP07
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 8:		//MAP08
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 9:		//MAP09
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 10:	//MAP10
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 11:	//MAP11
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 12:	//MAP12
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 13:	//MAP13
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 14:	//MAP14
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 15:	//MAP15
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 16:	//MAP16
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 17:	//MAP17
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 18:	//MAP18
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 19:	//MAP19
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 20:	//MAP20
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 21:	//MAP21
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 22:	//MAP22
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 23:	//MAP23
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 24:	//MAP24
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 25:	//MAP25
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 26:	//MAP26
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 27:	//MAP27
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 28:	//MAP28
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 29:	//MAP29
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 30:	//MAP30
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 31:	//MAP31
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 32:	//MAP32
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		default:
-		break;
-		}
-		break;
-
-	//////////////////////////////////////////////////////////////// Freedoom: Phase 2
-	case 6:
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
-		switch (levnum)
-		{
-		case 1: //MAP01
-		Log(s:"\c[sp_Chlorine]Freedoom: Phase 2 checkpoints loaded.");
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 2:		//MAP02
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 3:		//MAP03
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 4:		//MAP04
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 5:		//MAP05
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 6:		//MAP06
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 7:		//MAP07
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 8:		//MAP08
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 9:		//MAP09
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 10:	//MAP10
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 11:	//MAP11
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 12:	//MAP12
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 13:	//MAP13
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 14:	//MAP14
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 15:	//MAP15
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 16:	//MAP16
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 17:	//MAP17
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 18:	//MAP18
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 19:	//MAP19
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 20:	//MAP20
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 21:	//MAP21
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 22:	//MAP22
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 23:	//MAP23
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 24:	//MAP24
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 25:	//MAP25
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 26:	//MAP26
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 27:	//MAP27
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 28:	//MAP28
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 29:	//MAP29
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 30:	//MAP30
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 31:	//MAP31
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 32:	//MAP32
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		default:
-		break;
-		}
-		break;
-
-	//////////////////////////////////////////////////////////////// Chex(R) Quest 3
-	case 7:
-		levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
-		switch (levnum)
-		{
-		case 1: //MAP01
-		Log(s:"\c[sp_Chlorine]Chex(R) Quest 3 checkpoints loaded.");
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 2:		//MAP02
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 3:		//MAP03
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 4:		//MAP04
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 5:		//MAP05
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 6:		//MAP06
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 7:		//MAP07
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 8:		//MAP08
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 9:		//MAP09
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 10:	//MAP10
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 11:	//MAP11
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 12:	//MAP12
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 13:	//MAP13
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 14:	//MAP14
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 15:	//MAP15
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 16:	//MAP16
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 17:	//MAP17
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 18:	//MAP18
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 19:	//MAP19
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 20:	//MAP20
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 21:	//MAP21
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 22:	//MAP22
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 23:	//MAP23
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 24:	//MAP24
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 25:	//MAP25
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 26:	//MAP26
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 27:	//MAP27
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 28:	//MAP28
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 29:	//MAP29
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 30:	//MAP30
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 31:	//MAP31
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		case 32:	//MAP32
-		PlaceCheckpoint(0.0,0.0,0.0);
-		break;
-		default:
-		break;
-		}
+		case 600: //////////////////////////////////////////////////////////////// AUGER ; ZENITH
+			levnum = GetLevelInfo(LEVELINFO_LEVELNUM);
+			switch (levnum)
+			{
+				case 1: 	//MAP01
+				Log(s:"\c[sp_Chlorine]AUGER; ZENITH checkpoints loaded.");
+				PlaceCheckpoint(1640.57,609.531,88);
+				break;
+				case 5:		//MAP05
+				PlaceCheckpoint(185.978,2325.91,768);
+				break;
+				case 6:		//MAP06
+				PlaceCheckpoint(-2061.93,-5120.59,-648);
+				break;
+				case 7:		//MAP07
+				PlaceCheckpoint(3833.4,1089.31,329);
+				break;
+				case 10:	//MAP10
+				PlaceCheckpoint(-6977.98,-2171.73,340);
+				PlaceCheckpoint(-6699.04,362.849,128);
+				break;
+				case 11:	//MAP11
+				PlaceCheckpoint(4244.62,-1907.33,256);
+				break;
+				case 12:	//MAP12
+				PlaceCheckpoint(-8065.75,-31807.6,64);
+				break;
+				case 13:	//MAP13
+				PlaceCheckpoint(1472.71,-1632.96,-704);
+				break;
+				case 14:	//MAP14
+				PlaceCheckpoint(-4025.61,2724.68,48);
+				break;
+				case 15:	//MAP15
+				PlaceCheckpoint(-2049.39,2479.77,24);
+				break;
+				case 16:	//MAP16
+				PlaceCheckpoint(4866.51,1422.75,-412.435);
+				PlaceCheckpoint(3256.35,-1782.55,-200);
+				break;
+				case 17: //MAP17
+				PlaceCheckpoint(1813.92,1757.32,104);
+				PlaceCheckpoint(115.662,-100.077,176);
+				break;
+				case 18:	//MAP18
+				PlaceCheckpoint(-480.616,-379.459,44);
+				PlaceCheckpoint(-980.97,591.432,144);
+				break;
+				case 19:	//MAP19
+				PlaceCheckpoint(351.269,979.555,0);
+				break;
+				case 20:	//MAP20
+				PlaceCheckpoint(3338.55,296.999,199.007);
+				break;
+				case 21:	//MAP21
+				PlaceCheckpoint(-516.612,4169.93,56);
+				break;
+				default:
+				break;
+			}
+		break;
+		case 601: 	//////////////////////////////////////////////////////////////// Sunlust															//Sets a value the cvar can draw from
+			levnum = GetLevelInfo(LEVELINFO_LEVELNUM);							//Gets the levelnums from the mapinfo
+			switch (levnum)														//switch statement
+			{
+				case 1: 														//MAP01
+					Log(s:"\c[sp_Chlorine]Sunlust checkpoints loaded."); 		//Message to tell the player that checkpoints have loaded.
+					PlaceCheckpoint(0.0,0.0,0.0); 								// Places the checkpoint by values XYZ
+					break;														//Ends script for map 01
+				case 2:															//MAP02
+					PlaceCheckpoint(0.0,0.0,0.0);								// Places the checkpoint by values XYZ
+					break;
+				default:
+				break;
+			}
 		break;
 	}
 }
 
-//Values execpt the last one must be fixed-point.
+//Values except the last one must be fixed-point.
 function void PlaceCheckpoint(int sdx,int sdy,int sdz)
 {
 SpawnForced("sp_SaveDisk",sdx,sdy,sdz,0,0);
 }
-
-/*
-//map 01
-PlaceCheckpoint(X,Y,Z,ANGLE,MAP);
-//map 02
-PlaceCheckpoint(X,Y,Z,ANGLE,MAP);
-*/

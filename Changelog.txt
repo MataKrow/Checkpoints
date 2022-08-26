@@ -16,3 +16,5 @@ PK3 - Standalone
 PK3 - REALM667 Version
 Wad - Resource only
 
+TODO: Upload to Realm667
+
