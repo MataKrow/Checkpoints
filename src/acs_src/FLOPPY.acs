@@ -17,37 +17,36 @@ script "checkpoint_warp_connected" ENTER
 // Warps player to checkpoint set and Gives sp_PowerLoad to player
 script "checkpoint_warp" RESPAWN
 {
-if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
+	if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 	{
-		IF (sp_ActorExists(SP_DISK_TID))
+		if (sp_ActorExists(SP_DISK_TID))
 		{
 			SetHudSize(320,240,TRUE);
-			until (sp_PlayerKeyDown(-1, BT_ZOOM) && !GetCvar("sp_ZCancel") || sp_RoomForWarp())
+			until (sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") || sp_RoomForWarp())
+			{
+				if (GetCvar("sp_ZCancel") == TRUE)
 				{
-					HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
-					if (GetCvar("sp_ZCancel") == TRUE)
-					{
-						HudMessage(l:"sp_CheckWait",s:"\n ",l:"sp_CheckWaitZoom"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"sp_Chlorine", 160.0, 190.0, 1.0, 2.0);
-					}
-					else
-					{
-						HudMessage(l:"sp_CheckWait"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"sp_Chlorine", 160.0, 190.0, 1.0, 2.0);
-					}
-					delay(35);
+					HudMessage(s:"            ",l:"sp_CheckWait",s:"\n ",l:"sp_CheckWaitZoom"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"sp_Chlorine", 160.0, 190.0, 1.0, 2.0);
 				}
+				else
+				{
+					HudMessage(s:"  ",l:"sp_CheckWait"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 0,"sp_Chlorine", 161.0, 185.0, 1.0, 2.0);
+				}
+				delay(35);
+			}
 			SetHudSize(0, 0,TRUE);
 			if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
+			{
+				if(GetCvar("sp_ProtectSpawned") == TRUE)
 				{
-					if(GetCvar("sp_ProtectSpawned") == TRUE)
-					{
-						GiveInventory("sp_PowerLoad", 1);
-					}
-					FadeTo(0, 0, 160,0.40, 0.0);
-					FadeTo(0, 0, 0, 0.0, 0.3);
-					ChangeActorAngle(0,Random(0.0,1.0));
-					ThrustThingZ(0, Random(GetCvar("sp_SpawnVelocityZ_Min"),GetCvar("sp_SpawnVelocityZ_Max")), 0, 0);
-					ThrustThing(Random(0,256),GetCvar("sp_SpawnVelocityXY"), 1, 0);
+					GiveInventory("sp_PowerLoad", 1);
 				}
+				FadeTo(0, 0, 160,0.40, 0.0);
+				FadeTo(0, 0, 0, 0.0, 0.3);
+				ChangeActorAngle(0,Random(0.0,1.0));
+				ThrustThingZ(0, Random(GetCvar("sp_SpawnVelocityZ_Min"),GetCvar("sp_SpawnVelocityZ_Max")), 0, 0);
+				ThrustThing(Random(0,256),GetCvar("sp_SpawnVelocityXY"), 1, 0);
+			}
 		}
 	}
 }
@@ -59,7 +58,6 @@ script "checkpoint_wipe" (void)
 	{
 		thing_remove(SP_DISK_TID);
 	}
-	terminate;
 }
 
 //Logs "[PLAYERNAME] just hit a checkpoint!" and revives everyone.
@@ -70,7 +68,7 @@ script "checkpoint_hit" (void)
 		GiveInventory ("sp_PowerSaved", 1);
 	}
 
-
+	// Saves the Game in Zandronum
 	if(GetPlayerAccountName(0) != 0)
 	{
 		AutoSave();
@@ -96,24 +94,19 @@ script "checkpoint_hit" (void)
 	FadeTo(0, 0, 0, 0.0, 0.3);
 }
 
-script "sp_init_revive_all" (void)
+//Revives all players.
+script "sp_revive_all" (void)
 {
 	if (GameType() != GAME_SINGLE_PLAYER && GetPlayerAccountName(0) != 0)
 	{
-		ACS_NamedExecute("sp_revive_all", 0,GetCvar("sp_ResDelay"));
-	}
-}
-
-//Revives all players.
-script "sp_revive_all" (int time)
-{
-	delay(35);
-	int i = 0;
-	while (i<SP_MAXPLAYERS)
-	{
-		SetDeadSpectator(i,FALSE);
-		i++;
-		delay(time);
+		delay(35);
+		int i = 0;
+		while (i<SP_MAXPLAYERS)
+		{
+			SetDeadSpectator(i,FALSE);
+			i++;
+			delay(GetCvar("sp_ResDelay"));
+		}
 	}
 }
 

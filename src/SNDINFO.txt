@@ -1,4 +1,4 @@
 SP_CHECK SP_CHECK
 SP_SAVED SP_SAVED
-$limit SP_CHECK 4
-$limit SP_SAVED 4
+$limit SP_CHECK 1
+$limit SP_SAVED 1

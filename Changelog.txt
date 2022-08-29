@@ -1,3 +1,14 @@
+9/??/22
++ New MP Sound
++ Realm 667 Typos Fixed
++ Preview picture now properly maintains aspect ratio.
++ Preview picture's file name isn't named Insanity Sphere anymore.
++ Fixed Z-Cancelling still partially working when disabled.
++ Fixed "Waiting to Warp..." being off centered with CVAR sp_ZCancel disabled
++ Save Disk Now occupies 32035 as it's Reserved TID and Ednum.
+- Removed Redundant HudMessageBold()
+
+
 8/26/2022
 + M8f's Target Spy Support
 + All strings now use a LANGUAGE lump

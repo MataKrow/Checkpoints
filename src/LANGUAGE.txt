@@ -45,7 +45,7 @@ $ifgame(heretic) sp_CheckHit = "\c[sp_Chlorine]hath cast a Checkpoint!";
 $ifgame(hexen) sp_CheckHit = "\c[sp_Chlorine]hath cast a Checkpoint!";
 $ifgame(chex)sp_CheckHit = "\c[sp_Chlorine]just hit a Chexpoint!";
 
-sp_CheckWait = "\c[sp_Chlorine]            Waiting to warp...";
+sp_CheckWait = "\c[sp_Chlorine]Waiting to warp...";
 sp_CheckWaitZoom = "\c[sp_Chlorine]Hold the Zoom Key to cancel.";
 
 //Decorate
