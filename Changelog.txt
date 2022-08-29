@@ -7,6 +7,7 @@
 + Fixed "Waiting to Warp..." being off centered with CVAR sp_ZCancel disabled
 + Save Disk Now occupies 32035 as it's Reserved TID and Ednum.
 - Removed Redundant HudMessageBold()
+- Removed Redundant $limit
 
 
 8/26/2022
