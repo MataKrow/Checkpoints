@@ -7,8 +7,11 @@
 + Realm667's Preview picture now properly maintains Pixel Ratio.
 + Fixed Z-Cancelling still partially working when disabled.
 + Fixed "Waiting to Warp..." being off centered with CVAR sp_ZCancel disabled
++ Fixed Inventory.PickupMessage not pointing to it's respective Language string
 + Save Disk Now occupies 32035 as it's Reserved TID and Ednum.
 - Removed Redundant HudMessageBold()
+
+Mostly fixes. Like that mispelled survival in Checkpoint Disk's description. It's been driving me nuts.
 
 Information:
 Name: Checkpoint Disk
@@ -30,13 +33,15 @@ Sprites: Save Disk Graphic (STDISK) from Id Software
 Sprite Edit: None
 Idea Base: Exl's Save Disk System and BioHazard's Checkpoint system.
 
-Description:
+Description: [UPDATE]
 When a Checkpoint Disk is touched, the game will save and the player will respawn in that location when they die.
-Additionally, it resurrects all players in Survival. (Zandronum-Compatible)
+Additionally, it resurrects all players in survival. (Zandronum-Compatible)
 
 
-Sprite:
+Sprite: [UPDATE]
 https://i.imgur.com/3DbpL59.png
 
-Download Link:
+Download Link: [UPDATE]
 https://github.com/Matacrat/Checkpoints/releases/download/v1.1/Checkpoints_v667.pk3
+
+

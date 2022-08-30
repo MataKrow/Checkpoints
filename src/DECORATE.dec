@@ -9,10 +9,12 @@ Actor sp_SaveDisk : CustomInventory 32035
 	Height 56
 	Radius 25
 	Gravity 2.0
-	Inventory.PickupMessage "\c[sp_Chlorine]You've reached a Checkpoint."
+	FloatBobPhase -1
+	Inventory.PickupMessage "$sp_CheckHitYou"
 	Inventory.PickupFlash "sp_FlashSpawner"
-	Inventory.PickupSound ""
+	Inventory.PickupSound "dsempty"
 	+INVENTORY.NOSCREENFLASH
+	+INVENTORY.ALWAYSPICKUP
 	+CANPASS
 	+FLOATBOB
 	+NOTDMATCH
