@@ -1,4 +1,4 @@
-sp_Chlorine //Modified from Chor
+sp_Chlorine
 {
 	#0E281E #1A7F58 0 100
 	#198973 #16D3AD 101 180

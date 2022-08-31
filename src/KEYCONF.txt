@@ -1,3 +1,4 @@
+// [STANDALONE]
 alias sp_resettodefaults "sp_ProtectActivator TRUE; sp_ProtectSpawned TRUE; sp_SpawnVelocityZ_Min 28; sp_SpawnVelocityZ_Max 32; sp_SpawnVelocityXY 5; sp_ResDelay 14; sp_Presets 0; sp_ZCancel 1"
 addmenukey "Checkpoint Options" "openmenu Checkpoint"
 alias Checkpoint "openmenu Checkpoint"

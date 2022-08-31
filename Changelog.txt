@@ -1,16 +1,14 @@
 9/??/22
-+ New MP Sound
 + Realm 667 Typos Fixed
 + Preview picture now properly maintains aspect ratio
-+ Preview picture's file name isn't named Insanity Sphere anymore
++ Fixed 2 Fountain Spawners appearing when 2 Disks are touched at the same time.
++ Checkpoints no longer crashes Zandronum at all.
 + Fixed Z-Cancelling still partially working when disabled
++ Fixed sp_checkpoint_warp applying to the world when a player disconnects
 + Fixed "Waiting to Warp..." being off centered with CVAR sp_ZCancel disabled
-+ Save Disk Now occupies 32035 as it's Reserved TID and Ednum
 + Fixed Inventory.PickupMessage not pointing to it's respective Language string
++ Save Disk Now occupies 32035 as it's Reserved TID and Ednum
 + Randomized Float Bobbing
-- Removed Redundant HudMessageBold()
-- Removed Redundant $limit
-
 
 8/26/2022
 + M8f's Target Spy Support

@@ -4,7 +4,7 @@
 //
 //===========================================================================
 
-pulselight SavePulse
+pulselight sp_SavePulse
 {
     color 0 0.1 0.5
     size 35
@@ -16,15 +16,15 @@ pulselight SavePulse
 
 object sp_SaveDisk
 {
-    frame SAVEA0 { light SavePulse }
+    frame SAVEA0 { light sp_SavePulse }
 }
 
 object sp_PlayerSpawner
 {
-    frame TNT1A0 { light SavePulse }
+    frame TNT1A0 { light sp_SavePulse }
 }
 
 object sp_FlashSpawner
 {
-    frame TNT1A0 { light SavePulse }
+    frame TNT1A0 { light sp_SavePulse }
 }

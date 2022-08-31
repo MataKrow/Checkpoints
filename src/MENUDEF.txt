@@ -1,3 +1,4 @@
+// [STANDALONE]
 OptionMenu "Checkpoint"
 {
 	Title "$sp_TitleOptions"

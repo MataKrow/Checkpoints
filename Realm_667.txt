@@ -2,24 +2,28 @@
 
 [UPDATE] Changes:
 
-+ New MP Sound
-+ Realm 667 Description Typos Fixed
-+ Realm667's Preview picture now properly maintains Pixel Ratio.
-+ Fixed Z-Cancelling still partially working when disabled.
++ Realm 667 Typos Fixed
++ Preview picture now properly maintains aspect ratio
++ Fixed 2 Fountain Spawners appearing when 2 Disks are touched at the same time.
++ Checkpoints no longer crashes Zandronum at all.
++ Fixed Z-Cancelling still partially working when disabled
++ Fixed sp_checkpoint_warp applying to the world when a player disconnects
 + Fixed "Waiting to Warp..." being off centered with CVAR sp_ZCancel disabled
 + Fixed Inventory.PickupMessage not pointing to it's respective Language string
-+ Save Disk Now occupies 32035 as it's Reserved TID and Ednum.
-- Removed Redundant HudMessageBold()
++ Save Disk Now occupies 32035 as it's Reserved TID and Ednum
++ Randomized Float Bobbing
+
+
 
 Mostly fixes. Like that mispelled survival in Checkpoint Disk's description. It's been driving me nuts.
 
-Information:
-Name: Checkpoint Disk
-Type: Checkpoint / PowerUp
+Information: [UPDATE]
+Name: Checkpoint Disk / Save Disk
+Type: Checkpoint / Powerup
 Palette: Doom
 Summon: sp_SaveDisk
-Use Type: Instant
-Duration: 1.5 to 3 seconds.
+Use type: Instant
+Duration: 1 to 3 Seconds.
 Brightmaps: No
 Actor modification: No
 ACS: Yes
@@ -31,12 +35,11 @@ GLDefs: Matacrat
 Sounds: EarthBound's Healing Sound and Tomb Raider's Secret Sound
 Sprites: Save Disk Graphic (STDISK) from Id Software
 Sprite Edit: None
-Idea Base: Exl's Save Disk System and BioHazard's Checkpoint system.
+Idea Base: Exl's Save Disk System and BioHazard's Checkpoint system
 
-Description: [UPDATE]
-When a Checkpoint Disk is touched, the game will save and the player will respawn in that location when they die.
+Description: Please [UPDATE]
+When touched, the game will save and the player will respawn in that location when they die.
 Additionally, it resurrects all players in survival. (Zandronum-Compatible)
-
 
 Sprite: [UPDATE]
 https://i.imgur.com/3DbpL59.png

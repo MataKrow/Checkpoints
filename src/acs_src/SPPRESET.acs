@@ -1,3 +1,4 @@
+// [STANDALONE]
 #library "SPPRESET"
 #include "zcommon.acs"
 

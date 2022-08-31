@@ -1,28 +1,26 @@
 #library "FLOPPY" // Name of the library
 #include "zcommon.acs"
 
-//WARNING: Zandronum will potentially crash if you host a checkpoint chugging contest.
-
 //////////////////////////////////////////////////////////////
 //						SAVE DISK START						//
 //////////////////////////////////////////////////////////////
 #define SP_DISK_TID 32035
 #define SP_MAXPLAYERS 64
 
-script "checkpoint_warp_connected" ENTER
+script "sp_checkpoint_warp_connected" ENTER
 {
-	ACS_NamedExecuteAlways("checkpoint_warp",0);
+	ACS_NamedExecuteAlways("sp_checkpoint_warp",0);
 }
 
-// Warps player to checkpoint set and Gives sp_PowerLoad to player
-script "checkpoint_warp" RESPAWN
+// Warps player to checkpoint set and Gives Spawn Protection to the player.
+script "sp_checkpoint_warp" RESPAWN
 {
-	if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
+	if (!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
 	{
-		if (sp_ActorExists(SP_DISK_TID))
+		if (sp_ActorExists(SP_DISK_TID) && sp_ActorExists(0))
 		{
 			SetHudSize(320,240,TRUE);
-			until (sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") || sp_RoomForWarp())
+			until (sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") || sp_RoomForWarp() || !sp_ActorExists(0))
 			{
 				if (GetCvar("sp_ZCancel") == TRUE)
 				{
@@ -35,7 +33,7 @@ script "checkpoint_warp" RESPAWN
 				delay(35);
 			}
 			SetHudSize(0, 0,TRUE);
-			if(!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE || !GetCvar("sp_ZCancel"))
+			if (!sp_PlayerKeyDown(-1, BT_ZOOM) && GetCvar("sp_ZCancel") == TRUE && sp_ActorExists(0) || !GetCvar("sp_ZCancel") && sp_ActorExists(0))
 			{
 				if(GetCvar("sp_ProtectSpawned") == TRUE)
 				{
@@ -51,24 +49,15 @@ script "checkpoint_warp" RESPAWN
 	}
 }
 
-//Clears previous checkpoints.
-script "checkpoint_wipe" (void)
-{
-	if (sp_ActorExists(SP_DISK_TID))
-	{
-		thing_remove(SP_DISK_TID);
-	}
-}
-
-//Logs "[PLAYERNAME] just hit a checkpoint!" and revives everyone.
-script "checkpoint_hit" (void)
+// Logs "[PLAYERNAME] just hit a checkpoint!" and saves the game.
+script "sp_checkpoint_hit" (void)
 {
 	if(GetCvar("sp_ProtectActivator") == TRUE)
 	{
 		GiveInventory ("sp_PowerSaved", 1);
 	}
 
-	// Saves the Game in Zandronum
+	// Saves the game only in Zandronum
 	if(GetPlayerAccountName(0) != 0)
 	{
 		AutoSave();
@@ -94,7 +83,21 @@ script "checkpoint_hit" (void)
 	FadeTo(0, 0, 0, 0.0, 0.3);
 }
 
-//Revives all players.
+// Clears previous checkpoints.
+script "sp_checkpoint_wipe" (void)
+{
+	if (sp_ActorExists(SP_DISK_TID))
+	{
+		thing_remove(SP_DISK_TID);
+	}
+}
+
+script "sp_SetTID" (void)
+{
+	Thing_ChangeTID (0, SP_DISK_TID);
+}
+
+// Revives all players.
 script "sp_revive_all" (void)
 {
 	if (GameType() != GAME_SINGLE_PLAYER && GetPlayerAccountName(0) != 0)
@@ -110,7 +113,7 @@ script "sp_revive_all" (void)
 	}
 }
 
-//Kills all players. Used for testing.
+// Kills all players. Used for testing.
 script "sp_iamlegend" (void)
 {
 	int i = 1;
@@ -122,7 +125,8 @@ script "sp_iamlegend" (void)
 	}
 }
 
-//Logs your coordinates into a function ready for preset placing
+// Logs your coordinates into a function ready for preset placing.
+// Should Only be in [STANDALONE] Versions.
 script "sp_getlocation" (void) NET
 {
 	LocalAmbientSound("SP_SAVED", 127);

@@ -9,7 +9,7 @@ server int sp_SpawnVelocityZ_Max = 32;
 server int sp_SpawnVelocityXY = 5;
 server int sp_ResDelay = 14;
 
-//Presets
+//Presets [STANDALONE]
 server int sp_Presets = 0;
 
 

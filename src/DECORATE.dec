@@ -16,12 +16,14 @@ Actor sp_SaveDisk : CustomInventory 32035
 	+INVENTORY.NOSCREENFLASH
 	+INVENTORY.ALWAYSPICKUP
 	+CANPASS
+	-CANBLAST
 	+FLOATBOB
 	+NOTDMATCH
 	-COUNTITEM
 	-NOGRAVITY
 	+NEVERRESPAWN
 	+NOTIMEFREEZE
+	+NOTELEOTHER
 	+FIXMAPTHINGPOS
 	+DONTGIB
 	+BRIGHT
@@ -32,7 +34,7 @@ Actor sp_SaveDisk : CustomInventory 32035
 			SAVE A -1
 			Stop
 		Pickup:
-			SAVE A 0 ACS_NamedExecute("checkpoint_hit", 0)
+			SAVE A 0 ACS_NamedExecute("sp_checkpoint_hit", 0)
 			Stop
 	}
 
@@ -42,21 +44,26 @@ Actor sp_FlashSpawner : Actor
 {
 	+NOTIMEFREEZE
 	+CANPASS
+	+NOTELEOTHER
+	-CANBLAST
 	-SOLID
 	-NOGRAVITY
-	Height 0
+	Height 1
 	Radius 24
 	Gravity 14.0
+
 	States
 	{
 		Spawn:
 			TNT1 A 0
+			TNT1 A 0 ACS_NamedExecuteAlways("sp_SetTID", 0)
 			TNT1 A 0 ACS_NamedExecute("sp_revive_all", 0)
-			TNT1 A 3 ACS_NamedExecuteAlways("checkpoint_wipe", 0)
+			TNT1 A 3 ACS_NamedExecuteAlways("sp_checkpoint_wipe", 0)
 			TNT1 A 1 A_SpawnItemEx ("sp_PlayerSpawner",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE,0,32035)
 			TNT1 A 1
 			Stop
 	}
+
 }
 
 Actor sp_PlayerSpawner : ParticleFountain
@@ -64,11 +71,14 @@ Actor sp_PlayerSpawner : ParticleFountain
 	Tag "Fountain Spawner"
 	Health 3 // Changes the Color...
 	Gravity 2.0
+	Height 1
 	-NOBLOCKMAP
 	-NOGRAVITY
 	+INVISIBLE
 	+NOTIMEFREEZE
 	+CANPASS
+	+NOTELEOTHER
+	-CANBLAST
 	+NEVERRESPAWN
 	+FIXMAPTHINGPOS
 	-SOLID
@@ -77,7 +87,7 @@ Actor sp_PlayerSpawner : ParticleFountain
 Actor sp_PowerSaved : PowerInvulnerable
 {
 	inventory.icon "SP_ICON"
-	Powerup.Duration 53
+	Powerup.Duration 35
 }
 
 Actor sp_PowerLoad : sp_PowerSaved
