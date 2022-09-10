@@ -1,8 +1,8 @@
 # ![logo](https://user-images.githubusercontent.com/48725508/181269756-df1dfbbf-7cbf-48e9-9d6e-91c9b84635b3.png)
 
 
-### Forum Thread
-https://forum.zdoom.org/viewtopic.php?f=43&t=76051
+## Sites
+### [Zdoom Forums Thread](https://forum.zdoom.org/viewtopic.php?f=43&t=76051)<br />[Realm 667 Submission](https://www.realm667.com/en/item-store-mainmenu-169-61042/powerups-a-artifacts-mainmenu-170-4162/2466-checkpoint-disk)
 ## **Overview**
 When touched, the game will save and the player will respawn in that location when they die.<br />
 Additionally, it resurrects all players in surival.<br />
