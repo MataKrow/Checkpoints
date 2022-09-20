@@ -57,17 +57,11 @@ script "sp_checkpoint_hit" (void)
 		GiveInventory ("sp_PowerSaved", 1);
 	}
 
-	// Saves the game only in Zandronum
-	if(GetPlayerAccountName(0) != 0)
-	{
-		AutoSave();
-	}
-
-	// Saves the Game in GZDoom Multiplayer
-	ScriptCall("sp_MultiplayerAutosave", "sp_ZscriptAutoSave");
+	AutoSave();
 
 	if (GameType() != GAME_SINGLE_PLAYER)
 	{
+		ScriptCall("sp_MultiplayerAutosave", "sp_ZscriptAutoSave"); // Saves the Game in GZDoom's Multiplayer
 		HudMessageBold(s:""; HUDMSG_PLAIN, 880, 0, 0.0, 0.0, 0.0, 0.0);
 		SetHudSize(320,240,TRUE);
 		HudMessageBold (s:"\c[sp_Chlorine]",n:0,s:" ",l:"sp_CheckHit"; HUDMSG_FADEOUT | HUDMSG_COLORSTRING | HUDMSG_LOG, 880,"sp_Chlorine", 160.0, 62.0, 1.0, 2.0);

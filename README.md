@@ -9,7 +9,7 @@ Additionally, it resurrects all players in surival.<br />
 It's a solution I've made for when an autosave unexpectedly buffers the game for a second. Now players could invoke the buffer by choice.<br />
 It also solves the "Running To Evil" problem present in co-op. Players can get right back into the action with little to no delay with the spawnpoint moved.<br />
 ## **Features**
-* Zandronum and GZDoom Compatible. (Not ZDoom though)
+* Zandronum and GZDoom Compatible.
 * Uses an actor for it's position tracking so that it could be placed on moving sectors without any clips.
 * Still Saves in GZDoom Multiplayer.
 * Collision-Safe. It's unable to telefrag existing Players.
@@ -22,7 +22,7 @@ It also solves the "Running To Evil" problem present in co-op. Players can get r
 * Presets.
 ## **Presets**<br />
 The checkpoint system was primarilly designed as a resource for mappers, but the people I've shown this to expressed of adding sometype of way to place this into pre-existing maps.<br /> So I made this.<br /> A mistake I've made when first releasing this was to place this in the "Gameplay Mods" category on zdoom forums.<br />
-With presets, It is a gameplay mod, but it's not the main focus. 
+With presets, It is a gameplay mod, but it's not the main focus.
 <br /> I really care about polishing this system more and more and making presets *surprisingly* is real draining for me. Currently the only mapset supported is [AUGER;ZENITH](https://www.doomworld.com/forum/topic/123042-dbp37-augerzenith-the-cyberpunk-megawad/) but I plan to add more mapsets in the future at a snail's pace.
 ## Media
 

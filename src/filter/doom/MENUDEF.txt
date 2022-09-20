@@ -1,7 +1,0 @@
-// [STANDALONE]
-AddOptionMenu "OptionsMenu"
-{
-	StaticText ""
-	Submenu "$sp_TitleOptions", "Checkpoint"
-	StaticText ""
-}

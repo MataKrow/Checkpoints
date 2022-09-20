@@ -4,17 +4,19 @@ REM sets some initial Variables.
 REM remove the "." from ".gzdoom.exe" to allow it to work with your build of gzdoom
 set GZPATH=D:\Doom\SourcePorts\Z-Based\GZDoom
 set ZANDROPATH=D:\Doom\SourcePorts\Multiplayer\Zandronum
+set ZPATH=D:\Doom\SourcePorts\Z-Based\Zdoom
 set ProjName=Checkpoints
 
 
 
 
 :choice
-set /P c="1-GZDOOM 2-ZANDRONUM 3-GZDOOM Multiplayer test : "
+set /P c="1-GZDOOM 2-ZANDRONUM 3-ZDOOM 4-GZDOOM Multiplayer test : "
 echo.
 if /I "%c%" EQU "1" goto :opt1
 if /I "%c%" EQU "2" goto :opt2
 if /I "%c%" EQU "3" goto :opt3
+if /I "%c%" EQU "4" goto :opt4
 if /I "%c%" EQU "0" exit
 goto :choice
 
@@ -63,6 +65,27 @@ Zandronum -noautoload +vid_fullscreen 0 +idmypos 1 +vid_fps 1 +am_cheat 2 +noise
 exit
 
 :opt3
+ @echo off
+echo Ready to Start.
+echo Step 1: Packing
+echo Packing...
+cd src
+..\7z a -r -x!src\ -x!acs\*.acs -x!maps\*.o -x!maps\*.acs -x!dialogs\ -x!*.dbs -x!*.bat -x!*.bak -x!*.backup* -x!*.db  -ssw -tzip ..\%ProjName%n.pk3 "*"
+echo Done packing.
+echo Step 2: Replace old version
+echo Replacing old version.
+cd ..
+del %ProjName%.pk3
+ren %ProjName%n.pk3 %ProjName%.pk3
+echo Done replacing.
+echo Done.
+
+cd %ZPATH%
+REM Runs the project
+Zdoom -noautoload +vid_fullscreen 0 +idmypos 1 +vid_fps 1 +am_cheat 2 +noise 0 +developer 2 +sv_cheats 1 -stdout -file %~dp0%ProjName%.pk3 %~dp0DOOMTEST.wad
+exit
+
+:opt4
 
  @echo off
 echo Ready to Start.
