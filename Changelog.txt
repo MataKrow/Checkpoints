@@ -1,4 +1,8 @@
-9/??/22
+10/20/22
++ Checkpoints now supports LZDoom and ZDoom
++ Checkpoint Options can now be accessed without opening the console for Zandronum.
+
+9/31/22
 + Realm 667 Typos Fixed
 + Preview picture now properly maintains aspect ratio
 + Fixed 2 Fountain Spawners appearing when 2 Disks are touched at the same time.
@@ -22,11 +26,3 @@
 + Misc Fixes and Improvements
 + Updated the localization files
 - Removed Kinsie's Test map from Builds
-
-TODO: Build 3 versions
-PK3 - Standalone
-PK3 - REALM667 Version
-Wad - Resource only
-
-TODO: Upload to Realm667
-

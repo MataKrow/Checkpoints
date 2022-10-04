@@ -1,23 +1,10 @@
 [UPDATE] Checkpoint Disk
 
 [UPDATE] Changes:
-
-+ Realm 667 Typos Fixed
-+ Preview picture now properly maintains aspect ratio
-+ Fixed 2 Fountain Spawners appearing when 2 Disks are touched at the same time.
-+ Checkpoints no longer crashes Zandronum at all.
-+ Fixed Z-Cancelling still partially working when disabled
-+ Fixed sp_checkpoint_warp applying to the world when a player disconnects
-+ Fixed "Waiting to Warp..." being off centered with CVAR sp_ZCancel disabled
-+ Fixed Inventory.PickupMessage not pointing to it's respective Language string
-+ Save Disk Now occupies 32035 as it's Reserved TID and Ednum
-+ Randomized Float Bobbing
++ Checkpoints now supports LZDoom and ZDoom (Removed redundant source port checks.)
 
 
-
-Mostly fixes. Like that mispelled survival in Checkpoint Disk's description. It's been driving me nuts.
-
-Information: [UPDATE]
+Information:
 Name: Checkpoint Disk / Save Disk
 Type: Checkpoint / Powerup
 Palette: Doom
@@ -35,16 +22,14 @@ GLDefs: Matacrat
 Sounds: EarthBound's Healing Sound and Tomb Raider's Secret Sound
 Sprites: Save Disk Graphic (STDISK) from Id Software
 Sprite Edit: None
-Idea Base: Exl's Save Disk System and BioHazard's Checkpoint system
+Idea Base: Exl's Save Disk System and BioHazard's Checkpoint System
 
-Description: Please [UPDATE]
+Description:
 When touched, the game will save and the player will respawn in that location when they die.
 Additionally, it resurrects all players in survival. (Zandronum-Compatible)
 
-Sprite: [UPDATE]
+Sprite:
 https://i.imgur.com/3DbpL59.png
 
 Download Link: [UPDATE]
-https://github.com/Matacrat/Checkpoints/releases/download/v1.1/Checkpoints_v667.pk3
-
-
+https://github.com/Matacrat/Checkpoints/releases/latest/download/Checkpoints_v667.pk3
