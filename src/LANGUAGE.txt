@@ -6,7 +6,7 @@ sp_HeaderAuthor = "\c[sp_Chlorine]Checkpoints v1.1 by Matacrat";
 
 sp_HeaderProtect = "\c[sp_Chlorine]Spawn Protection";
 
-sp_OptionSafeCaller = "Given to activator";
+sp_OptionSafeCaller = "Given to the activator";
 sp_OptionSafeRes = "Given to the resurrected";
 
 
