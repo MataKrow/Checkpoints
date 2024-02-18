@@ -5,7 +5,7 @@
 ### [Doomworld Thread](https://www.doomworld.com/forum/topic/135726)<br />[Realm 667 Submission](https://www.realm667.com/en/item-store-mainmenu-169-61042/powerups-a-artifacts-mainmenu-170-4162/2466-checkpoint-disk)
 ## **Overview**
 When touched, the game will save and the player will respawn in that location when they die.<br />
-Additionally, it resurrects all players in surival.<br />
+Additionally, it resurrects all players in survival.<br />
 It's a solution I've made for when an autosave unexpectedly buffers the game for a second. Now players could invoke the buffer by choice.<br />
 It also solves the "Running To Evil" problem present in co-op. Players can get right back into the action with little to no delay with the spawnpoint moved.<br />
 ## **Features**
