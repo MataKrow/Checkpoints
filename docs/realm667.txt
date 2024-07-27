@@ -16,9 +16,9 @@ Actor modification: No
 ACS: Yes
 
 Credits:
-Submitted: Matacrat
-Code: Matacrat (and a bit of Korshun)
-GLDefs: Matacrat
+Submitted: MataKrow
+Code: MataKrow (and a bit of Korshun)
+GLDefs: MataKrow
 Sounds: EarthBound's Healing Sound and Tomb Raider's Secret Sound
 Sprites: Save Disk Graphic (STDISK) from Id Software
 Sprite Edit: None
@@ -32,4 +32,4 @@ Sprite:
 https://i.imgur.com/3DbpL59.png
 
 Download Link: [UPDATE]
-https://github.com/Matacrat/Checkpoints/releases/latest/download/Checkpoints_v667.pk3
+https://github.com/MataKrow/Checkpoints/releases/latest/download/Checkpoints_v667.pk3

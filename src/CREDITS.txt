@@ -1,5 +1,5 @@
-Code: Matacrat (and a bit of Korshun)
-GLDefs: Matacrat
+Code: MataKrow (and a bit of Korshun)
+GLDefs: MataKrow
 Sounds: EarthBound's Healing Sound and Tomb Raider's Secret Sound
 Sprites: Save Disk Graphic (STDISK) from Id Software
 Sprite Edit: None

@@ -36,5 +36,5 @@ https://user-images.githubusercontent.com/48725508/186764933-498834f6-e346-41be-
 
 ![image](https://user-images.githubusercontent.com/48725508/186786800-841658e8-3202-45f6-86a5-8ea1ec15ca10.png)
 
-<img alt="GitHub" src="https://img.shields.io/github/license/Matacrat/Checkpoints">  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/downloads/Matacrat/Checkpoints/latest/total">
+<img alt="GitHub" src="https://img.shields.io/github/license/MataKrow/Checkpoints">  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/downloads/MataKrow/Checkpoints/latest/total">
 

@@ -2,7 +2,7 @@
 
 //Menudef [STANDALONE]
 sp_TitleOptions = "\c[sp_Chlorine]Checkpoint Options";
-sp_HeaderAuthor = "\c[sp_Chlorine]Checkpoints v1.3 by Matacrat";
+sp_HeaderAuthor = "\c[sp_Chlorine]Checkpoints v1.3 by MataKrow";
 
 sp_HeaderProtect = "\c[sp_Chlorine]Spawn Protection";
 

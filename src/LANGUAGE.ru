@@ -2,7 +2,7 @@
 
 //Menudef [STANDALONE]
 sp_TitleOptions = "\c[sp_Chlorine]Настройки контрольных точек";
-sp_HeaderAuthor = "\c[sp_Chlorine]Контрольные точки вер. 1.1 Автор: Matacrat";
+sp_HeaderAuthor = "\c[sp_Chlorine]Контрольные точки вер. 1.1 Автор: MataKrow";
 
 sp_HeaderProtect = "\c[sp_Chlorine]Защита при возрождении";
 
